@@ -1,0 +1,17 @@
+----- GIT -----
+
+resources:
+	http://think-like-a-git.net/
+
+
+There is a new branch created in remote (origin/new-branch).
+We want to have a copy of same branch in our local system.
+And set upstream to same origin/new-branch.
+So any push will update origin/new-branch.
+
+syntax:
+	git checkout -b <branch> --track <remote>/<branch>
+ex:
+	git checkout -b new-branch --track origin/new-branch
+
+link: https://git-scm.com/docs/git-checkout

@@ -1,0 +1,10 @@
+link: https://support.microsoft.com/en-us/office/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0
+
+Inserting ASCII characters
+To insert an ASCII character, press and hold down ALT while typing the character code. For example, to insert the degree (°) symbol, press and hold down ALT while typing 0176 on the numeric keypad.
+
+Inserting Unicode characters
+To insert a Unicode character, type the character code, press ALT, and then press X. For example, to type a dollar symbol ($), type 0024, press ALT, and then press X.
+
+Unicode chart link: https://unicode.org/charts/
+
