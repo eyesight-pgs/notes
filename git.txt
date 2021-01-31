@@ -1,10 +1,10 @@
 ----- GIT -----
 
-resources:
+-> resources:
 	http://think-like-a-git.net/
 
 
-There is a new branch created in remote (origin/new-branch).
+-> There is a new branch created in remote (origin/new-branch).
 We want to have a copy of same branch in our local system.
 And set upstream to same origin/new-branch.
 So any push will update origin/new-branch.
@@ -15,3 +15,19 @@ ex:
 	git checkout -b new-branch --track origin/new-branch
 
 link: https://git-scm.com/docs/git-checkout
+
+
+-> git line ending problem (LF & CRLF)
+	windows tries add CRLF
+	linux tries to add LF
+	link: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+	preferred configs for windows and linux:
+		on windows,
+			git config --global core.autocrlf true
+			// files are commited to repo with LF, but displayed as CRLF on windows machine
+			
+		on linux,
+			git config --global core.autocrlf input
+			// files are commited as LF, even if some CRLF exists, it corrects to LF
+
+
