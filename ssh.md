@@ -14,3 +14,12 @@
 	Host *
 	    SSH_OPTION value
 	```
+
+	example:
+	```ssh
+	Host github.com
+		User git
+		Hostname github.com
+		PreferredAuthentications publickey
+		IdentityFile github-ed25519
+	```
