@@ -1,0 +1,11 @@
+---------- JEKNKINS ----------
+
+-> if statement inside Jenkinsfile
+    if is not allowed inside stage
+    if not allowed inside steps
+    if allowed inside script
+    
+    to add if inside steps, first create 'script' inside 'steps' then add 'if' inside 'script'
+    
+    
+    

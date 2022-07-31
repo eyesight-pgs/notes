@@ -1,0 +1,4 @@
+----- linus output redirection -----
+
+link: https://unix.stackexchange.com/questions/99263/what-does-21-in-this-command-mean#:~:text=2%20refers%20to%20the%20second,first%20file%20descriptor%2C%20i.e.%20stdout%20.
+link: https://tldp.org/LDP/abs/html/io-redirection.html

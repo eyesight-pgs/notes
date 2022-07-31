@@ -1,0 +1,10 @@
+How to check if a value is iterable?
+
+link: https://stackoverflow.com/a/32538867
+function isIterable(obj) {
+	// checks for null and undefined
+	if (obj == null) {
+		return false;
+	}
+	return typeof obj[Symbol.iterator] === 'function';
+}

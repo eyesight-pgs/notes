@@ -1,0 +1,20 @@
+----- gdrive -----
+command to upload files to google drive
+
+github link:
+https://github.com/prasmussen/gdrive
+
+
+upload to particular subfolder
+```bash
+gdrive upload -p parent_folder_id file_to_upload
+```
+folder id can be found on folder url in browser
+see:
+https://askubuntu.com/questions/1170171/how-do-i-use-gdrive-to-upload-a-file-to-a-google-drive-directory
+
+
+
+
+
+

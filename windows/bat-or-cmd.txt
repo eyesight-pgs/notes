@@ -1,0 +1,12 @@
+----------- .bat file / .cmd file ----------
+
+
+--> Change directory to curent batch file location
+	-> link: https://stackoverflow.com/a/17064031/9077311
+	-> cd %~dp0
+	
+	
+--> Full pathname
+	-> link: https://stackoverflow.com/a/17064031/9077311
+	-> %~f0
+

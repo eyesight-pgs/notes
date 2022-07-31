@@ -1,0 +1,15 @@
+----- linux free up space -----
+
+
+
+-> journal
+journalctl --disk-usage
+(To see the size of the log)
+
+journalctl --vacuum-time=1d
+(To delete, the 1d represents that it will delete logs more than a day older)
+
+
+-> Delete thumbnail cache without a cleaner software:
+rm -r ~/.cache/thumbnails/*
+

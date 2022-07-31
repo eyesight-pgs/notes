@@ -1,0 +1,17 @@
+ 
+Linux permission become pretty hectic when files accessed by different users (on same os or different os).
+
+https://unix.stackexchange.com/questions/422656/how-to-make-an-ext4-formatted-usb-drive-with-full-rw-permissions-for-any-linux-m
+tune2fs is the solution.
+We need to set a default ACL on the root directory of the USB stick filesystem that assigns full access to everyone on any new file or directory. And to ensure that the stick will be mounted with ACL support enabled, we need to use tune2fs to adjust the default mount options stored in the filesystem metadata.
+
+```bash
+sudo mkfs.ext4 /dev/sdX1
+sudo tune2fs -o acl /dev/sdX1
+sudo mount /dev/sdX1 /mnt
+sudo chown <username>: /mnt
+chmod 777 /mnt
+setfacl -m d:u::rwx,d:g::rwx,d:o::rwx /mnt
+sudo umount /mnt
+```
+

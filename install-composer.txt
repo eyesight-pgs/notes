@@ -1,0 +1,21 @@
+How to install composer?
+
+-> completely uninstall composer if installed previously
+-> create directory "G:\app_data\composer\global\"
+-> create new environment variable called "COMPOSER_HOME" add value
+	G:\app_data\composer\global
+-> add following path to "path" environment
+	G:\app_data\composer\global\vendor\bin
+-> go to link https://getcomposer.org/download/
+-> scroll down to "Manual Download" section
+-> click on "Latest Stable" link (https://getcomposer.org/composer-stable.phar)
+-> a file named "composer.phar" will be downloaded
+-> move this downloaded file to g:/apps/composer/ directory
+	g:/apps/composer/composer.phar
+-> veriify
+	php g:/apps/composer/composer.phar
+-> go to "g:/apps/composer/" directory
+-> create a file "composer.cmd" with following content
+	@php "$~dp0composer.phar" %*
+-> add "g:/apps/composer/" to "path" environment variable
+

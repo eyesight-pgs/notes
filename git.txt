@@ -1,0 +1,17 @@
+---------- GIT ----------
+
+--> Commonly used commands explained
+	link: https://forum.freecodecamp.org/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222
+	
+--> new branch
+		-> go to a prefered branch
+			-> git branch <new branch name>
+			OR
+			-> git checkout -b <new branch name>
+			
+
+-> UNDO
+	How to undo (almost) anything with Git 
+	link: https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/
+
+

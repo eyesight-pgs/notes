@@ -1,0 +1,6 @@
+E:\tech\nvm_windows
+
+to get administrative previlages in powershell:
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+// not working

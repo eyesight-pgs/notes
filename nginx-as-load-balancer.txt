@@ -1,0 +1,18 @@
+
+
+nginx.config
+``` 
+upstream web_servers {
+    server 192.168.0.1;
+    server 192.168.0.2;
+}
+
+server {
+    listen 80;
+    
+    location / {
+        proxy_set_header x-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://web_servers;
+    }
+}
+```

@@ -1,0 +1,7 @@
+How to clear nodejs console?
+
+on linux:
+	process.stdout.write('\033[2J')
+
+on windows:
+	process.stdout.write('\033c')

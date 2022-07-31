@@ -1,0 +1,43 @@
+----- CRON JOB -----
+
+-> usage
+	each user will have their own crontab file
+	crontab --help
+	-> view content
+		crontab -u <username> -l
+	-> edit content
+		crontab -u <username> -e
+
+-> cron runs jobs in your home directory,
+so unless your script cds somewhere else.
+
+
+-> time format
+link: https://stackoverflow.com/a/19755020
+*     *     *     *     *  YOURCOMMAND
+-     -     -     -     -
+|     |     |     |     |
+|     |     |     |     +----- Day in Week (0 to 7) (Sunday is 0 and 7)
+|     |     |     +------- Month (1 to 12)
+|     |     +--------- Day in Month (1 to 31)
+|     +----------- Hour (0 to 23)
++------------- Minute (0 to 59)
+
+-> timing short cuts:
+@reboot --> only once at startup
+@daily ---> once a day
+@midnight --> once a day at midnight
+@hourly --> once a hour
+@weekly --> once a week
+@monthly --> once a month
+@annually --> once a year
+@yearly --> once a year
+
+-> alterantive
+@daily --> 0 0 * * *
+@midnight --> 0 0 * * *
+@hourly --> 0 * * * *
+@weekly --> 0 0 * * 0
+@monthly --> 0 0 1 * *
+@annually --> 0 0 1 1 *
+@yearly --> 0 0 1 1 *

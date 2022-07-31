@@ -1,0 +1,33 @@
+---------- JS ----------
+
+-> printing circular object
+	if you know which key is responsible for
+	cirecular reference,
+	then we can remove it like:
+
+		{
+			...data,
+			pointer: 'obj'
+		}
+	ex:
+class A {
+	ptr: A
+	ten: number
+	ele: number
+	
+	constructor() {
+		this.ptr = this
+		this.ten = 10
+		this.ele = 11
+	}
+}
+function getNonCircular(a: A) {
+	return {
+		...a,
+		ptr: 'obj'
+	}
+}
+const a = new A()
+const nonCircular = getNonCircular(a)
+
+--------------------------

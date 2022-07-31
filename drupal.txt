@@ -1,0 +1,12 @@
+installing drupal:
+
+
+makedir dupal_app1
+cd drupal_app1
+composer init
+composer require drupal/recommended-project
+
+
+
+
+drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example

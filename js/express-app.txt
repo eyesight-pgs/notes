@@ -1,0 +1,14 @@
+----- express app -----
+
+
+
+-> while using express app with mysql
+	read this: https://github.com/mysqljs/mysql/issues/889
+	using app.locals for mysql connection pool
+app.locals.connectionPool = mysql.createPool({
+    connectionLimit : 10,
+    host : 'localhost',
+    user : 'user',
+    password : 'password',
+    database : 'database'
+});

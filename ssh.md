@@ -1,6 +1,12 @@
 # ssh
 
+## generate new key pair
+
+ssh-keygen -o
+
+
 ## config
+
 	file path: ~/.ssh/config
 	file content looks like
 	```ssh
@@ -23,3 +29,4 @@
 		PreferredAuthentications publickey
 		IdentityFile github-ed25519
 	```
+
