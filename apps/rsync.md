@@ -12,10 +12,13 @@ rsync -anv <source-path-with-trailing-slash> <destination-path-without-trailing-
 ```
 
 here `n` is for dry run
+
 `v` for verbose
 
 ## other options
 
 `z` for compress while transfering data. useful when remote host is involved
+
 `P` it combines both --progress and --partial
+
 `--exclude` exclude files/folders
