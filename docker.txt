@@ -70,3 +70,45 @@ docker run --interactive --tty --name cotnainer-name image_name:version_name com
 docker run --interactive --tty --name cotnainer-cat cat:2 /bin/cat
 ```
 
+## inspect
+
+A greate tool to inpect any resource in docker. Use like:
+`docker inspect <resourc-id>`
+
+ex:
+
+`docker inspect <image-name>`
+`docker inspect <image-id>`
+`docker inspect <container-name'>`
+`docker inspect <container-id>`
+`docker inspect <network-name>`
+
+## network
+
+`docker network ls` list all networks
+
+`docker network create my-nw` creates a custom bridge network.
+It will create default gateway ip like: 172.17.0.1 and all new docker containers
+created will have next ip addresses like 172.17.0.2, 172.17.0.3 .
+To create a contain with custom bridge n/w run docker create command with --network option like:
+`docker create --network my-nw --name my-container archlinux`. Its very easy to refer other
+containers in same custom bridge network...like: `ping my-container2`
+
+`docker inspect <network-name>`
+
+## copy files to docker
+
+`docker cp my-file.ext my-container:/my/path/`
+
+# view logs
+
+`docker logs my-container`
+`docker logs my-container | tail`
+
+
+
+
+
+
+
+
