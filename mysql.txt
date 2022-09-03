@@ -52,7 +52,7 @@ innodb_buffer_pool_size=4G
 
 -> creating 'root'@'%'
 
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'toor';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root_user_password';
 Query OK, 0 rows affected (0.00 sec)
 
 mysql> FLUSH PRIVILEGES;
