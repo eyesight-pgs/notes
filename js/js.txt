@@ -31,3 +31,29 @@ const a = new A()
 const nonCircular = getNonCircular(a)
 
 --------------------------
+
+
+
+## json sort & format
+
+```js
+/**
+ * JSON Sort & format
+ */
+function jsons(obj, space = 2) {
+  const allKeys = [];
+  const seen = {};
+  JSON.stringify(obj, function (key, value) {
+    if (!(key in seen)) {
+      allKeys.push(key);
+      seen[key] = null;
+    } return value;
+  });
+  allKeys.sort();
+  return JSON.stringify(obj, allKeys, space);
+}
+```
+
+
+
+
