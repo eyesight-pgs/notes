@@ -14,6 +14,12 @@
 	How to undo (almost) anything with Git 
 	link: https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/
 
+## Undo last commit
+
+`git reset HEAD~` this will undo last commit and changes will be unstaged
+
+link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git
+
 -> add left out changes to last commit
   first stage the modified content, then:
   git commit --amend --no-edit
