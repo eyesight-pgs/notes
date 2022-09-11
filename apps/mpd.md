@@ -1,5 +1,8 @@
 # mpd
 
+After configuring mpd for 1st time there will be no songs.
+To add songs run `mpc --host=/home/USER_NAME/.config/mpd/socket update`
+
 ## start mpd for debugging problems
 
 mpd --no-daemon --stdout --verbose
