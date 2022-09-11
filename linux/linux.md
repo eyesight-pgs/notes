@@ -1,7 +1,8 @@
 # linux
 
 ## print cpu frequency
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
+
+`cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq`
 
 ## add new group to an user & use new group without re-login
 
@@ -26,5 +27,16 @@ ex:
 ## other
 
 `cp -L my-symbolic-link /my/path`: copy content of symbolic link
+
+## alias
+
+alias clr='clear'
+alias d='docker'
+alias k='kubectl'
+alias g='git'
+alias wl='nmcli d wifi list'
+alias wcon='nmcli d wifi connect'
+alias n='nvim'
+
 
 
