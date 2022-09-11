@@ -23,13 +23,20 @@
 
 link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git
 
+## stage & unstage
+
+`git add *` stage all files
+`git add ./my-file.txt` stage single file
+`git reset *` unstage all the files
+`git reset ./my-file.txt` unstage single file
+
 ## add left out changes to last commit
 
   first stage the modified content, then:
   git commit --amend --no-edit
   It will add modfied content to existing commit (last commit)
 
-## view details for any commit
+## show - view details for any commit
 
   git show <commit>
   git show HEAD ## for last commit
