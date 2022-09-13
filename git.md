@@ -43,15 +43,17 @@ link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-l
 
 ## git config
 
+```sh
 git config --local --list
 git config --global --list
 git config --local user.name "Foo Bar"
 git config --local user.email "foo.bar@example.com"
 git config --local --unset user.name
-
+```
 
 ## adding git alias
 
+```sh
 git config --global alias.ps "push"
 git config --global alias.psf "push --force"
 git config --global alias.pl "pull"
@@ -80,7 +82,7 @@ git config --global alias.di "diff"
 git config --global alias.dis "diff --staged"
 git config --global alias.di- "diff --"
 git config --global alias.dis- "diff --staged --"
-
+```
 
 
 
