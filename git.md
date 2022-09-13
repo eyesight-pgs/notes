@@ -23,12 +23,17 @@
 
 link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git
 
+
 ## stage & unstage
 
 `git add *` stage all files
+
 `git add ./my-file.txt` stage single file
+
 `git reset *` unstage all the files
+
 `git reset ./my-file.txt` unstage single file
+
 
 ## add left out changes to last commit
 
