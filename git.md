@@ -70,6 +70,8 @@ git config --global alias.col "config --local"
 git config --global alias.cog "config --global"
 git config --global alias.coll "config --local --list"
 git config --global alias.cogl "config --global --list"
+git config --global alias.colu "config --local --unset"
+git config --global alias.cogu "config --global --unset"
 git config --global alias.cm "commit"
 git config --global alias.cma "commit --amend"
 git config --global alias.cmane "commit --amend --no-edit"
@@ -88,12 +90,5 @@ git config --global alias.dis "diff --staged"
 git config --global alias.di- "diff --"
 git config --global alias.dis- "diff --staged --"
 ```
-
-
-
-
-
-
-
 
 
