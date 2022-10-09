@@ -1,5 +1,11 @@
 # GIT
 
+## config file
+
+`~/.gitconfig` - config file location.<br>
+Most of the time it can be modified by `git config --global <configsection>.<configname>`
+
+
 ## Commonly used commands explained
 
 	link: https://forum.freecodecamp.org/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222
@@ -12,7 +18,7 @@
 			-> git checkout -b <new branch name>
 			
 
-## UNDO
+## undo
 
 	How to undo (almost) anything with Git 
 	link: https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/
@@ -90,5 +96,3 @@ git config --global alias.dis "diff --staged"
 git config --global alias.di- "diff --"
 git config --global alias.dis- "diff --staged --"
 ```
-
-
