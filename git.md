@@ -17,7 +17,6 @@ Most of the time it can be modified by `git config --global <configsection>.<con
 			OR
 			-> git checkout -b <new branch name>
 			
-
 ## undo
 
 	How to undo (almost) anything with Git 
@@ -96,3 +95,36 @@ git config --global alias.dis "diff --staged"
 git config --global alias.di- "diff --"
 git config --global alias.dis- "diff --staged --"
 ```
+
+## git difftools
+
+`git-delta`
+
+example usage:
+
+```
+[core]
+	pager = delta
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[delta]
+  features = decorations
+  side-by-side = true
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+
+[delta "decorations"]
+  commit-decoration-style = blue ol
+  commit-style = raw
+  file-style = omit
+  hunk-header-decoration-style = blue box
+  hunk-header-file-style = red
+  hunk-header-line-number-style = "#067a00"
+  hunk-header-style = file line-number syntax
+```
+
+
+
