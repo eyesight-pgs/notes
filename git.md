@@ -51,6 +51,34 @@ link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-l
   git show <commit>
   git show HEAD ## for last commit
 
+## push with "--force " vs "--force-with-lease"
+
+`--force-with-lease` is safer option than `--force`
+`--force` - overwrites remote, remvoes other teammates changes if any.
+`--force-with-lease` - overwrites remote, but does not remove other teammates changes if any.
+
+## git revert
+
+- revert back to previous commit after pushing it to remote:
+
+```bash
+git revert --hard Head~1
+git push --force
+```
+
+- git revert back to some commit id after pushing to remote:
+
+```bash
+git revert --hard <commit-id>
+git push --force
+```
+
+## pushing local branch to remote
+
+```bash
+git push -u origin "<branch-name>"
+```
+
 ## git config
 
 ```sh
@@ -59,6 +87,7 @@ git config --global --list
 git config --local user.name "Foo Bar"
 git config --local user.email "foo.bar@example.com"
 git config --local --unset user.name
+git config --glocal --edit # manually editing config
 ```
 
 ## adding git alias
@@ -77,6 +106,8 @@ git config --global alias.coll "config --local --list"
 git config --global alias.cogl "config --global --list"
 git config --global alias.colu "config --local --unset"
 git config --global alias.cogu "config --global --unset"
+git config --global alias.cole "config --local --edit"
+git config --global alias.coge "config --global --edit"
 git config --global alias.cm "commit"
 git config --global alias.cma "commit --amend"
 git config --global alias.cmane "commit --amend --no-edit"
@@ -126,5 +157,51 @@ example usage:
   hunk-header-style = file line-number syntax
 ```
 
+## github PR diff
+
+To get diff from github, put .diff at the end of PR's url
+
+## appying patch
+
+```bash
+git apply --reject --whitespace=fix mychanges.patch
+# link: https://stackoverflow.com/a/15375869
+```
+
+# line ending LF vs CRLF
+
+link: https://stackoverflow.com/q/10418975
+
+- Checkout Windows-style, commit Unix-style (recommended for windows)
+	`git config --local core.autocrlf true`
+- Checkout as-is, commit Unix-style (recommended for linux)
+	`git config --local core.autocrlf input`
+- Checkout as-is, commit as-is (not conversion by git)
+	`git config --local core.autocrlf false`
+
+# changing commit message of multiple commits
+
+link: https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message
+Displays a list of the last 3 commits on the current branch
+```bash
+$ git rebase -i HEAD~3
+pick e499d89 Delete CNAME
+pick 0c39034 Better README
+pick f7fde4a Change the commit message but push the same commit.
+```
+Replace pick with reword before each commit message you want to change (in vi editor).
+```bash
+pick e499d89 Delete CNAME
+reword 0c39034 Better README
+reword f7fde4a Change the commit message but push the same commit.
+```
+then force push
+```bash
+git push --force origin example-branch
+```
+
+## git stash delete all
+
+`git stash clear`
 
 
