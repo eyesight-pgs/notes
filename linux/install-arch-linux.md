@@ -52,8 +52,9 @@ TLDR:
 1. boot loader (most difficult one as it rarely works)
   - install grub
 1. unmount using `umount -R /mnt`
-1. reboot (congratulations!! installation completed*)
-1. isntall and run neofetch
+1. reboot (congratulations!! installation completed\*)
+1. install and run neofetch
+1. install `archlinux-keyring`
 
 
 
