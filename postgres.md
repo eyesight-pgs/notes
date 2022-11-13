@@ -388,3 +388,20 @@ set info = jsonb_set(info, '{"k6","addr","contact","email"}', ('"'||m.new_email|
 from maping m
 where m.old_email = trim('"' from (json_field_update.info->'k6'->'addr'->'contact'->'email')::text)
 ```
+
+
+## timestamp (WITH timezone) vs timestamp (WITHOUT timezone) vs date
+
+- [docs](https://www.postgresql.org/docs/current/datatype-datetime.html)
+- `timestamp` - timestamp WITHOUT timezone
+- `timestampz` - timestamp WITH timezone
+
+## unnest
+
+```sql
+select
+'some text' as msg,
+'2020-01-01' as date
+from unnest(array['1','2']);
+```
+

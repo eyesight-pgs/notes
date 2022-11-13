@@ -110,4 +110,56 @@ test("test axios calls", async()=> {
 ```
 
 
+## best way to mock axios (no liniting/typescript error)
+
+```sql
+import axios from "axios"
+jest.mock("axios);
+
+describe("desc 1", () => {
+  test("test 1", () => {
+    const getMock = jest.spyOn(axios, "get").mockResolvedValueOnce({ data: responseData });
+    // ... other code
+    expect(getMock.mock.calls.length).toBe(1);
+    getMock.mockReset();
+  });
+});
+```
+
+## custom value for environtment variables
+
+```ts
+// file: env.service.ts
+export class EnvService {
+  getEnv(envName: string) {
+    return process.env[envName];
+  }
+}
+```
+
+```ts
+// file: env.service.unit.test.ts
+import { EnvService } from "./env.service";
+const OLD_ENV = process.env;
+const envService = new EnvService();
+describe("test index", () => {
+  beforeEach(() => {
+    process.env = {...OLD_ENV};
+  });
+  afterAll(() => {
+    process.env = OLD_ENV;
+  });
+
+  test("should get custom env", async () => {
+    process.env.MY_ENV = "11";
+    expect(envService.getEnv("MY_ENV")).toBe("11");
+  });
+  test("should NOT get custom env", async () => {
+    expect(envService.getEnv("MY_ENV")).toBe(undefined);
+  });
+});
+```
+
+
+
 
