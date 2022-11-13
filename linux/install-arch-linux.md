@@ -1,7 +1,7 @@
 # install arch linux
 
-Hint: practice this in virtual box before trying with bare metal
-Hint: Arch wiki has everything you want to know
+Hint: practice this in virtual box before trying with bare metal.<br>
+Hint: Arch wiki has everything you want to know.
 
 TLDR:
   - internet, sync time
@@ -58,7 +58,7 @@ TLDR:
 
 
 
-* if you are experienced enough / lucky enough
+\* if you are experienced enough / lucky enough
 
 
 
