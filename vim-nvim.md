@@ -68,7 +68,14 @@ C-o for jump list
 C-t for tag list
 ```
 
+## using vimscript inside lua
 
-
-
+```lua
+local result = vim.api.nvim_exec(
+[[
+  " vim script here
+  nmap <leader>mp <Plug>MarkdownPreviewToggle
+]],
+true)
+```
 
