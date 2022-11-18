@@ -405,10 +405,15 @@ select
 from unnest(array['1','2']);
 ```
 
-## coalesce (get non empty/null value)
+## coalesce (get non null value)
+
+`COALESCE(value [, ...])`
+
+The COALESCE function returns the first of its arguments that is not null.  
+Null is returned only if all arguments are null.
 
 ```sql
-select coalesce(null, 10) as val; -- val will be 10
+select coalesce(null, null, null, 10) as val; -- val will be 10
 select coalesce(5, 10) as val; -- val will be 5
 select coalesce(0, 10) as val; -- val will be 0
 select coalesce(false, true) as val; -- val will be false
