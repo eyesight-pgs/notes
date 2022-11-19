@@ -19,7 +19,7 @@ TLDR:
 1. `timedatectl set-ntp true`
 1. disk partion (most dangerous step as you could loose your data)
   - use a tool like fdisk / cfdisk (also `lsblk` is your friend)
-  - choose GTP
+  - choose GPT
   - root partion - ext4, around 30 GB
   - boot partion - ext4, 512MB (mark as bootable; otherwise grub will cry)
   - swap partion - no file system, around 8GB, do swap on
