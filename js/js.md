@@ -27,7 +27,7 @@ export class SignInModel {
   @ValidateNested({ each: true })
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
-  @Type(() => AuthParam)
+  @Type(() => AuthParam) // from "class-transformer" package
   authParameters: AuthParam[];
 }
 ```
