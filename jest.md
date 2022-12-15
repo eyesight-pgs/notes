@@ -160,6 +160,104 @@ describe("test index", () => {
 });
 ```
 
+## jest mock static funtions
+
+https://stackoverflow.com/a/52334169
+
+
+```ts
+import A from '../src/a'
+import B from '../src/b'
+
+jest.mock('../src/a')
+
+describe('Wallet', () => {
+    it('should work', () => {
+        const mockStaticF = jest.fn().mockReturnValue('worked')
+
+        A.staticF = mockStaticF
+
+        const b = new B()
+
+        const result = b.gCallsStaticF()
+        expect(result).toEqual('worked')
+    })
+})
+```
+
+## mock a user defined class
+
+```ts
+-- default exported class
+import MyClass from "./my-class";
+jest.mock('./my-class', () => {
+  return jest.fn().mockImplementation(() => {
+    return {
+      save: jest.fn().mockResolvedValue(true),
+      constructor: jest.fn().mockResolvedValue(true)
+    };
+  });
+});
+```
+
+## reset / restore / clear of mock
+
+- [stackoverflow-ans](https://stackoverflow.com/a/59792748))
+- clear: replaces "fn.mock.calls" & "fn.mock.instances" with new one.
+- reset: resets implementation to "no return" function.
+- restore: for mock it resets implementation to "no return" function; but for spys it restore original implementaion.
+
+
+
+
+## jest mock static funtions
+
+https://stackoverflow.com/a/52334169
+
+
+```ts
+import A from '../src/a'
+import B from '../src/b'
+
+jest.mock('../src/a')
+
+describe('Wallet', () => {
+    it('should work', () => {
+        const mockStaticF = jest.fn().mockReturnValue('worked')
+
+        A.staticF = mockStaticF
+
+        const b = new B()
+
+        const result = b.gCallsStaticF()
+        expect(result).toEqual('worked')
+    })
+})
+```
+
+## mock a user defined class
+
+```ts
+-- default exported class
+import MyClass from "./my-class";
+jest.mock('./my-class', () => {
+  return jest.fn().mockImplementation(() => {
+    return {
+      save: jest.fn().mockResolvedValue(true),
+      constructor: jest.fn().mockResolvedValue(true)
+    };
+  });
+});
+```
+
+## reset / restore / clear of mock
+
+- [stackoverflow-ans](https://stackoverflow.com/a/59792748))
+- clear: replaces "fn.mock.calls" & "fn.mock.instances" with new one.
+- reset: resets implementation to "no return" function.
+- restore: for mock it resets implementation to "no return" function; but for spys it restore original implementaion.
+
+
 
 
 
