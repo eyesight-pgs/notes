@@ -113,8 +113,8 @@ test("test axios calls", async()=> {
 ## best way to mock axios (no liniting/typescript error)
 
 ```sql
-import axios from "axios"
-jest.mock("axios);
+import axios from "axios";
+jest.mock("axios");
 
 describe("desc 1", () => {
   test("test 1", () => {
