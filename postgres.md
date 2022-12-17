@@ -419,3 +419,8 @@ select coalesce(0, 10) as val; -- val will be 0
 select coalesce(false, true) as val; -- val will be false
 select coalesce('', 'Hi') as val; -- val will be <empty string>
 ```
+
+## access nested json object property
+
+`select json_obj->>user->>first_name from users`
+
