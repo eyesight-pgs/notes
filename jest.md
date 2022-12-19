@@ -24,6 +24,19 @@ Ex: `npx jest ./path/to/my/file --coverage=false --maxWorkers=1`
 `.toHaveBeenCalledTimes` for function call count
 `.toHaveReturnedWith` to check return value of mocked function (https://jestjs.io/docs/expect#tohavereturnedwithvalue)
 
+## expect to reject (async)
+
+```ts
+// code to be tested
+async function foo() {
+  throw new Error("Too bad!");
+}
+// testing
+test("async foo function should reject", async () => {
+  await expect(foo()).rejects.toThrow("Too bad!");
+});
+```
+
 ## spyOn
 const spyiedFn = jest.spyOn(myClass, "myMethod");
 
