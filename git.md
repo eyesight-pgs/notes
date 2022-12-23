@@ -206,4 +206,6 @@ git push --force origin example-branch
 
 `git stash clear`
 
+## git log format(pretty print, ancestry-path)
 
+`git log --pretty=format:"%h%x09%an%x09%s" --ancestry-path <commit-ish-old>..<commit-ish-new> -- path/to/file/or/folder`
