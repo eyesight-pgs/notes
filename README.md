@@ -1,5 +1,7 @@
 # notes
 
+Things you need to remember... but you don't
+
 | What you do | How it feels |
 |-|-|
 | remember in brain | accessing L1 cache |
