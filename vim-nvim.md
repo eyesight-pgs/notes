@@ -49,12 +49,12 @@ v                               |
 ## markers (bookmark)
 
 ```txt
- mk      - mark current position (can use a-z)
- 'k      - move to mark k
- d'k     - delete from current position to mark k
- 'a-z    - same file
- 'A-Z    - between files
+ m<a-zA-Z>      - save mark
+ '<a-zA-Z>      - move to mark
+ d'<a-zA-Z>     - delete from current position to mark <a-zA-Z>
 ```
+
+`a-z` works within single file, where as `A-Z` works between files
 
 ## editing in a stream
 
