@@ -14,6 +14,11 @@ Ex: `npx jest ./path/to/my/file --coverage=false --maxWorkers=1`
 `npx ts-jest config:init` - init
 `npx jest` OR `npx jest ./path/to/my/file` - run test cases
 
+## jest cache
+
+Jest caches the code in its cache. If jest is running old code we need to clear the cache.<br>
+command: `npx jest --clearCache`
+
 ## expect
 
 [https://jestjs.io/docs/expect](https://jestjs.io/docs/expect)
