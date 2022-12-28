@@ -42,8 +42,8 @@ link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-l
 
 ## add left out changes to last commit
 
-  first stage the modified content, then:
-  git commit --amend --no-edit
+  first stage the modified content, then:<br>
+  `git commit --amend --no-edit`<br>
   It will add modfied content to existing commit (last commit)
 
 ## show - view details for any commit
