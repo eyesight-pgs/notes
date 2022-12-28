@@ -48,8 +48,11 @@ link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-l
 
 ## show - view details for any commit
 
-  git show <commit>
-  git show HEAD ## for last commit
+  - `git show <commit>`
+  - `git show HEAD ## for last commit`
+  
+  OR using `git diff`
+  - `git diff commit-ish~ commit-ish` ex: `git diff HEAD~ HEAD`
 
 ## push with "--force " vs "--force-with-lease"
 
