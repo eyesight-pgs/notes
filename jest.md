@@ -1,10 +1,9 @@
 # jest
 
-Jest has so many pit falls if you don't read the docs.<br>
-So just RTFM.<br>
-[jest command](https://jestjs.io/docs/cli)
-[jest apis](https://jestjs.io/docs/api)
-[configuration](https://jestjs.io/docs/configuration)
+Jest has so many pit falls if you don't read the docs. So just RTFM.<br>
+- [jest command](https://jestjs.io/docs/cli)
+- [jest apis](https://jestjs.io/docs/api)
+- [configuration](https://jestjs.io/docs/configuration)
 
 `npx jest` - selects files with .unit.test.js extension
 `npx jest ./path/to/my/file --coverage=false` run test for one file
