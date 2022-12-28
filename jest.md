@@ -17,7 +17,8 @@ Ex: `npx jest ./path/to/my/file --coverage=false --maxWorkers=1`
 ## jest cache
 
 Jest caches the code in its cache. If jest is running old code we need to clear the cache.<br>
-command: `npx jest --clearCache`
+command: `npx jest --clearCache`.<br>
+Jest cache path on windows: `C:\Users\<username>\AppData\Local\Temp\jest`
 
 ## expect
 
