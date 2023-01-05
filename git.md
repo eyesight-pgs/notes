@@ -212,3 +212,19 @@ git push --force origin example-branch
 ## git log format(pretty print, ancestry-path)
 
 `git log --pretty=format:"%h%x09%an%x09%s" --ancestry-path <commit-ish-old>..<commit-ish-new> -- path/to/file/or/folder`
+
+## git rebase
+
+- `git rebase <base>` - this will rebase current branch on top of <base>. Here <base> is commit-sh.
+- [reference-atlassian-git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
+- ex:
+  ```shell
+  # Create a feature branch based off of main
+  git checkout -b feature_branch main
+  # Edit files
+  git commit -a -m "Adds new feature"
+
+  # git rebase <base>
+  git rebase main
+  ```
+
