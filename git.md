@@ -97,7 +97,7 @@ git config --glocal --edit # manually editing config
 
 ```sh
 git config --global alias.ps "push"
-git config --global alias.psf "push --force"
+git config --global alias.psf "push --force-with-lease"
 git config --global alias.pl "pull"
 git config --global alias.br "branch"
 git config --global alias.ch "checkout"
