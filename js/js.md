@@ -286,4 +286,105 @@ function getNonCircular(a: A) {
 const a = new A()
 const nonCircular = getNonCircular(a)
 ```
+## CPU Profiling & Heap Snapshot
 
+`yarn add v8-profiler-next`
+
+```
+// PerfService.ts file
+import { createWriteStream } from "fs";
+import * as v8Profiler from "v8-profiler-next";
+import { pipeline } from "stream/promises";
+
+// CPU Profiling
+// usage:
+//   const cpu = new CpuPerfService("my-cpu-profiling");
+//   cpu.start();
+//   // do some stuff
+//   await cpu.finish();
+// then,
+//   Navigate to chrome://inspect
+//   Click Open dedicated DevTools for Node
+//   Select the profiler tab
+//   Load your file
+export class CpuPerfService {
+  private title: string = "";
+  public constructor(title: string) {
+    this.title = title;
+    this.config();
+  }
+
+  private config() {
+    // set generateType 1 to generate new format for cpuprofile
+    // to be compatible with cpuprofile parsing in vscode.
+    v8Profiler.setGenerateType(1);
+  }
+
+  private getDate() {
+    const input = new Date().toISOString();
+    const [_, date, time] =  /(\d\d\d\d-\d\d-\d\d)T(\d\d:\d\d:\d\d)/.exec(input) ?? [];
+    let output = `${date}--${time}`;
+    return output;
+  }
+
+  public start() {
+    v8Profiler.startProfiling(this.title, true);
+  }
+
+  // if it doesn't have the extension .cpuprofile then
+  // chrome's profiler tool won't like it.
+  public async finish() {
+    const profile = v8Profiler.stopProfiling(this.title);
+    const exportStream = profile.export(); // export returns stream if no parameter provided
+    const date = this.getDate();
+    const filename = `${this.title}--${date}.cpuprofile`;
+    const writeSteam = createWriteStream(filename, "utf8");
+    try {
+      await pipeline(exportStream, writeSteam);
+    } catch(error) {
+      console.log(`===== error: failed to write data to file =====`);
+      console.log(error);
+      console.log(`===== error: failed to write data to file =====`);
+    }
+  }
+}
+
+// Heap Snapshot
+// usage:
+//   const heap = new HeapPerfService("my-heap-check");
+//   await heap.takeSnapshot();
+//   // do some stuff
+//   await heap.takeSnapshot();
+export class HeapPerfService {
+  private title: string = "";
+  private count: number = -1;
+
+  public constructor(title: string) {
+    this.title = title;
+  }
+
+  private getDate() {
+    const input = new Date().toISOString();
+    const [_, date, time] =  /(\d\d\d\d-\d\d-\d\d)T(\d\d:\d\d:\d\d)/.exec(input) ?? [];
+    let output = `${date}--${time}`;
+    return output;
+  }
+
+  public async takeSnapshot() {
+    this.count++;
+    const snapshot = v8Profiler.takeSnapshot();
+    const exportStream = snapshot.export(); // export returns stream if no parameter provided
+    const date = this.getDate();
+    const filename = `${this.title}--${date}--${this.count}.heapsnapshot`;
+    const writeSteam = createWriteStream(filename, "utf8");
+    try {
+      await pipeline(exportStream, writeSteam);
+    } catch(error) {
+      console.log(`===== error: failed to take heap snapshot =====`);
+      console.error(error);
+      console.log(`===== error: failed to take heap snapshot =====`);
+    }
+    snapshot.delete();
+  }
+}
+```
