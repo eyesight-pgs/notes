@@ -68,6 +68,12 @@ C-o for jump list
 C-t for tag list
 ```
 
+## jump to the next word as of current
+
+`*` is used to jump to the next matching word as of current word under the
+cursor. Followed by `n` will move the cursor to next matching word (`N` for
+opposite direction).
+
 ## using vimscript inside lua
 
 ```lua
