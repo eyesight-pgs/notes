@@ -228,3 +228,8 @@ git push --force origin example-branch
   git rebase main
   ```
 
+## breaking monorepo with history (Splitting a subfolder out into a new repository)
+
+- https://docs.github.com/en/get-started/using-git/splitting-a-subfolder-out-into-a-new-repository
+
+
