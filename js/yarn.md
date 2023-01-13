@@ -16,6 +16,7 @@ yarn config list --verbose
   - per-user config file (~/.npmrc)
   - global config file ($PREFIX/etc/npmrc)
   - npm builtin config file (/path/to/npm/npmrc)
+- resetting npm registry location: `npm config set registry https://registry.npmjs.com/`
 
 # global installation directory
 - view path:
