@@ -231,5 +231,9 @@ git push --force origin example-branch
 ## breaking monorepo with history (Splitting a subfolder out into a new repository)
 
 - https://docs.github.com/en/get-started/using-git/splitting-a-subfolder-out-into-a-new-repository
+- git-filter-repo
+  - link to python script (raw): `https://raw.githubusercontent.com/newren/git-filter-repo/main/git-filter-repo`
+  - save to `git-filter-repo.py`
+  - running: `pyhton git-filter-repo.py`
 
 
