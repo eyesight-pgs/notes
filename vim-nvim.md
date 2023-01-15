@@ -139,4 +139,15 @@ Here is detailed instruction to set it up:
   }
   ```
 
+## missing features
+
+- vscode like smart selection missing
+  - vscode shortcuts:
+  ```txt
+  editor.action.smartSelect.expand
+  editor.action.smartSelect.shrink
+  ```
+  - plugin `terryma/vim-expand-region` tries to implement this.
+  But it is not smart enough to expand to function header after function body.
+
 
