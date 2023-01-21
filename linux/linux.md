@@ -66,3 +66,7 @@ alias n='nvim'
 \[ – Start a sequence of non-displayed characters (useful if you want to add a command or instruction set to the prompt)
 \] – Close or end a sequence of non-displayed characters
 
+## check the graphics driver
+
+open `about:support` in firefox
+
