@@ -20,7 +20,7 @@ Learning a programming language
 - function to find area of a circle
 - handle divide by `0` error
 - create instance of class `A`
-- create a plain object
+- create a nested object
   ```
   {
     name: {
@@ -31,12 +31,14 @@ Learning a programming language
     isHuman: false
   }
   ```
-- create XOX game
 - create Fibonacci function (recursive)
+- check if `ello` present in `Hello world!` using regexp
 - read `10` from of file
 - write `ten` to a file
+- write a test case for sum function
+- create a simple http server return request count as response
+- create XOX game
 - build a todo app
-- create a simple http server
 - create a app to connect to database
 - try regexp
 
