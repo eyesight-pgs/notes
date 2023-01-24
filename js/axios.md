@@ -15,3 +15,7 @@
     validateStatus: () => true, // don't throw error when status code like 4xx, 5xx
   })
   ```
+## handle error with try catch
+
+- type of error in catch block: https://github.com/axios/axios/issues/3612
+
