@@ -139,6 +139,10 @@ Here is detailed instruction to set it up:
   }
   ```
 
+## vim spell check with camelcase
+
+- spell check with camelcase support: https://github.com/kamykn/spelunker.vim
+
 ## missing features
 
 - vscode like smart selection missing
