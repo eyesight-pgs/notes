@@ -181,6 +181,22 @@ git apply --reject --whitespace=fix mychanges.patch
 # link: https://stackoverflow.com/a/15375869
 ```
 
+## cherry pick
+
+`git cherry-pick commitSha`
+
+```txt
+master - a - b
+   `- feature - c - d - e
+   
+git checkout master; git cherrypick e;
+
+master - a - b - e
+   `- feature - c - d - e   
+```
+
+
+
 # line ending LF vs CRLF
 
 link: https://stackoverflow.com/q/10418975
