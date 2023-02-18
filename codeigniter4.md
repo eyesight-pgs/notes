@@ -89,26 +89,6 @@ class My_table extends Model {
 - set: `$this->session->set(["key" => value])` or `$this->session->set(key, value)`
 - get: `$this->session->get(key)`
 
-## upgrading codeigniter version
-
-- Controller file name should start with Capital letter
-- `$query->row()` ===> `$query->gerFirstRow()`
-- `$resultObject->num_rows()` ===> `$resultObject->getNumRows()`
-- select query
-  ```php
-  <?php
-	$this -> db -> select('name,address,status');
-	$this -> db -> from('users');
-	$this -> db -> where('user_email',  $user_email);
-  ```
-  ===>
-  ```php
-  <?php
-	$this -> db -> table('users');
-	  -> select('name,address,status');
-	  -> where('user_email',  $user_email);
-  ```
-
 ## validation
 
 ```php
@@ -130,5 +110,99 @@ $isValid = $validation->withRequest($this->request)->run();
 ## redirect
 
 `return redirect()->to('home')`
+
+## form input
+
+`$this->req->getVar("my_key")` - same for both `get` and `post`
+
+```php
+<?php
+namespace App/Controllers;
+
+class MyController extends BaseController {
+  public function myFunc() {
+    const $username = $this->req->getVar("username");
+    const $password = $this->req->getVar("password");
+  }
+}
+```
+
+## uri segment
+
+- uri structure: `/class/method/seg3/seg4` 
+
+- if url is: `/MyClass/myMethod/seg3/seg4` then controller method will look like:
+```php
+<?php
+namespace App\controllers;
+
+class MyClass extends BaseController {
+  public function myMethod(seg1, seg2) {
+    //  ...
+  }
+}
+```
+
+## loading helpers
+
+- controller
+  ```php
+  <?php
+  namespace App\Controllers;
+  class MyController extends BaseController
+  {
+    protected $helpers = ["form"];
+    public function index() {
+      echo view("my_view);
+    }
+  }
+  ```
+
+- view
+```php
+<!-- some html here -->
+<!-- we can use form_open() bellow because we loaded form helper in MyController. -->
+<?php form_open(); ?>
+<!-- some html here -->
+```
+
+## upgrading codeigniter version
+
+- Controller file name should start with Capital letter
+- `$query->row()` ===> `$query->gerFirstRow()`
+- `$resultObject->num_rows()` ===> `$resultObject->getNumRows()`
+- select query
+  ```php
+  <?php
+	$this -> db -> select('name,address,status');
+	$this -> db -> from('users');
+	$this -> db -> where('user_email',  $user_email);
+  ```
+  ===>
+  ```php
+  <?php
+	$this -> db -> table('users');
+	  -> select('name,address,status');
+	  -> where('user_email',  $user_email);
+  ```
+- form input
+  `$this->input->get("username")` ===> `$this->req->getVar("username")`
+  `$this->input->post("username")` ===> `$this->req->getVar("username")`
+- render views: `$this->load->view("my_view", $data);` ===> `echo view("my_view", $data);`
+- load form helper:
+  ```php
+  <?php
+  // inside constructor or or any function
+  $this->load->helper('form');
+  ```
+  ===>
+  ```php
+  <?php
+  class MyClass extends BaseController {
+    protected $helpers = ["form"];
+  }
+  ```
+
+
 
 
