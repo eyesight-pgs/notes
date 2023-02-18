@@ -143,6 +143,15 @@ Here is detailed instruction to set it up:
 
 - spell check with camelcase support: https://github.com/kamykn/spelunker.vim
 
+## installing packer
+
+link: https://github.com/wbthomason/packer.nvim
+
+```shell
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
 ## missing features
 
 - vscode like smart selection missing
