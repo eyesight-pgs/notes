@@ -1,10 +1,16 @@
------ VS CODE INSTALLED EXTENSIONS -----
+# vscode extensions
 
-COMMAND TO LIST EXTENSIONS:
-codei --list-extensions
+## command to list extensions:
 
-COMMAND TO INSTALL AN EXTENSION:
-codei --install-extension <extension_id>
+```sh
+code --list-extensions
+```
+
+## command to install an extension:
+
+```sh
+code --install-extension <extension_id>
+```
 
 -----
 
