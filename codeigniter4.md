@@ -59,6 +59,22 @@ class SomeModel extends Model {
 }
 ```
 
+## update query
+
+```php
+<?php
+class MyModel extends Model {
+  public function myFunc() {
+    $flag = $this->builder()
+      ->where("user_id", 100)
+      ->set("first_name", "Foo")
+      ->set("last_name", "Bar")
+      ->update(); // returns bool
+  }
+}
+
+```
+
 ## select other table data in a model
 
 ```php
@@ -113,19 +129,25 @@ $isValid = $validation->withRequest($this->request)->run();
 
 ## form input
 
-`$this->req->getVar("my_key")` - same for both `get` and `post`
+- class: `private $req;`
+- constructor: `$this->req = \Config\Services::request();`
+- usage: `$this->req->getVar("my_key")` - same for both `get` and `post`
+- example:
+  ```php
+  <?php
+  namespace App/Controllers;
 
-```php
-<?php
-namespace App/Controllers;
-
-class MyController extends BaseController {
-  public function myFunc() {
-    const $username = $this->req->getVar("username");
-    const $password = $this->req->getVar("password");
+  class MyController extends BaseController {
+    private $req;
+    public function __construct() {
+      $this->req = \Config\Services::request();
+    }
+    public function myFunc() {
+      const $username = $this->req->getVar("username");
+      const $password = $this->req->getVar("password");
+    }
   }
-}
-```
+  ```
 
 ## uri segment
 
@@ -202,6 +224,8 @@ class MyClass extends BaseController {
     protected $helpers = ["form"];
   }
   ```
+- session
+  - `$this->session->userdata()` ===> `$this->session->get()`
 
 
 
