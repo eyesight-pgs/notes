@@ -389,6 +389,23 @@ export class HeapPerfService {
 }
 ```
 
+## simple http server
+
+```js
+import express from "express";
+function main() {
+  const app = express();
+  app.get("/msg", (req, res) => {
+    res.send({
+      msg: "hello world"
+    });
+  });
+  const port = 12345;
+  app.listen(port, () => { console.log(`listening on port: ${port}`) });
+}
+main();
+```
+
 ## simple http request
 
 ```js
