@@ -388,3 +388,21 @@ export class HeapPerfService {
   }
 }
 ```
+
+## simple http request
+
+```js
+import axios from "axios";
+async function main() {
+  const res = await axios.request({
+    method: 'POST',
+    url: 'https://example.com',
+    headers: {
+      "Authorization": "token"
+    },
+    data: {msg: "hello world"}
+  });
+  console.log(res.data);
+}
+main();
+```
