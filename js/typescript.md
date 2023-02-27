@@ -90,5 +90,8 @@ scripts for package.json
   },
 ```
 
+## type for object literal
+
+`type ObjectLiteral = Record<string, any>; // allows all object literals. ex: { name: "Foo" }`
 
 
