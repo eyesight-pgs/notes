@@ -177,9 +177,12 @@ To get diff from github, put .diff at the end of PR's url
 ## appying patch
 
 ```bash
+git apply --stat mychanges.patch
+git apply --check mychanges.patch
 git apply --reject --whitespace=fix mychanges.patch
-# link: https://stackoverflow.com/a/15375869
 ```
+- link: https://stackoverflow.com/questions/2249852/how-to-apply-a-patch-generated-with-git-format-patch
+- link: https://stackoverflow.com/a/15375869
 
 ## cherry pick
 
