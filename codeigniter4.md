@@ -207,6 +207,27 @@ class MyClass extends BaseController {
 	  -> select('name,address,status');
 	  -> where('user_email',  $user_email);
   ```
+- get_where query
+  ```php
+  <?php
+  $query = $this->db->get_where("table_name", ["some_key" => "some_value"]);
+  $result = $query->result();
+  // ===>
+  $query = $this->builder("table_name")->where(["some_key" => "some_value"])->get();
+  $result = $query->getResult();
+  ```
+- update query
+  ```sql
+  <?php
+  $this->db->set('firstname','Bar');
+  $this->db->where('email_id', $this->email_id);
+	$this->db->update('users');
+  // ===>
+  $ths->builder('users') // no need to provide table name if inside same model
+    ->set('firstname', 'Bar')
+    ->where('email_id', $this->email_id)
+    ->update();
+  ```
 - form input
   `$this->input->get("username")` ===> `$this->req->getVar("username")`
   `$this->input->post("username")` ===> `$this->req->getVar("username")`
