@@ -1,32 +1,14 @@
 # redis
 
-## Get all the keys
+## basics
 
-`keys *`
-
-## Searching for a key
-`keys *some_key*`
-
-
-## get a value of key
-`get some_key`
-
-
-## get values for multiple keys
-
-`mget key1 key2`
-
-## delete all the keys
-
-`flushall`
-
-## set value (update value)
-
-`set key value`
-
-## set multiple keys
-
-`mset firstkey "hello" secondkey "world"`
+- `keys *` - get all the keys
+- `keys *some_key*` - searching for a key
+- `get some_key` - get a value of key
+- `mget key1 key2` - get values for multiple keys
+- `flushall` - delete all the keys
+- `set key value` - set value (update value)
+- `mset firstkey "hello" secondkey "world"` - set multiple keys
 
 ## connect to remote machine
 
