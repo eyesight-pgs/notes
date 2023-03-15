@@ -422,5 +422,12 @@ select coalesce('', 'Hi') as val; -- val will be <empty string>
 
 ## access nested json object property
 
-`select json_obj->>user->>first_name from users`
+- link: https://stackoverflow.com/questions/24944347/postgresql-nested-json-querying
+- `->>` gives output as string. Ex: `select json_obj->>user->>first_name from users`
+- `->` gives ouput with actual datatype. Ex: `select json_obj->'user'->'first_name' from users`
+
+## operations on jsonb data (jsonb functions)
+
+https://www.postgresql.org/docs/current/static/functions-json.html
+
 
