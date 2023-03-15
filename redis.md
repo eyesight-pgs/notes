@@ -20,6 +20,10 @@
 
 `flushall`
 
+## set value (update value)
+
+`set key value`
+
 ## set multiple keys
 
 `mset firstkey "hello" secondkey "world"`
