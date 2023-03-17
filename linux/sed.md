@@ -19,5 +19,12 @@ echo "aa\nbbzzbb" | sed -e "s/bb/cc/g"
 sed 10q my_file.txt
 ```
 
+## find and replace in multiple file
 
+```sh
+cd /path/to/your/folder
+sed -i 's/foo/bar/g' *
+```
+- here `-i` stands for in place replace
+- other ex: `sed -i 's/foo/bar/g' my-file.txt`
 
