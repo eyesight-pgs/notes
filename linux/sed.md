@@ -19,7 +19,7 @@ echo "aa\nbbzzbb" | sed -e "s/bb/cc/g"
 sed 10q my_file.txt
 ```
 
-## find and replace in multiple file
+## saerch (find) and replace in multiple file
 
 ```sh
 cd /path/to/your/folder
