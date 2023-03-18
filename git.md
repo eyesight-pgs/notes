@@ -90,7 +90,7 @@ git config --global --list
 git config --local user.name "Foo Bar"
 git config --local user.email "foo.bar@example.com"
 git config --local --unset user.name
-git config --glocal --edit # manually editing config
+git config --global --edit # manually editing config
 ```
 
 ## adding git alias
