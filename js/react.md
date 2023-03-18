@@ -1,5 +1,9 @@
 # react
 
+## new react project
+
+`npx create-react-app my-app --template typescript`
+
 ## basic
 
 ```ts
