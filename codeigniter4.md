@@ -188,7 +188,7 @@ class MyClass extends BaseController {
 <!-- some html here -->
 ```
 
-## upgrading codeigniter version
+## upgrading codeigniter version to v4
 
 - Controller file name should start with Capital letter
 - `$query->row()` ===> `$query->gerFirstRow()`
@@ -247,7 +247,30 @@ class MyClass extends BaseController {
   ```
 - session
   - `$this->session->userdata()` ===> `$this->session->get()`
-
+- model loading inside controller
+  ```php
+  <?php
+  class MyController extends BaseController {
+    public __construct() {
+      $this->load->model("MyModel", "myModel");
+    }
+    public usage() {
+      // $this->myModel->myFunc();
+    }
+  }
+  ```
+  ===> 
+  ```php
+  <?php
+  class MyController extends BaseController {
+    private MyModel $myModel;
+    public __construct() {
+      $this->myModel = model("MyModel");
+    }
+    public usage() {
+      // $this->myModel->myFunc();
+    }
+  }
 
 
 
