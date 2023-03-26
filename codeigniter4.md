@@ -199,13 +199,21 @@ class MyClass extends BaseController {
 	$this -> db -> select('name,address,status');
 	$this -> db -> from('users');
 	$this -> db -> where('user_email',  $user_email);
-  ```
-  ===>
-  ```php
-  <?php
+  // ===>
 	$this -> db -> table('users');
 	  -> select('name,address,status');
 	  -> where('user_email',  $user_email);
+  ```
+  ```php
+  <?php
+	$count = $this->db
+		->where('name', $name)
+		->count_all_results('employee');
+  // ===>
+	$count = $this->builder()
+		->where('name', $name)
+		->countAll();
+	}
   ```
 - get_where query
   ```php
