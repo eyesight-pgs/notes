@@ -162,11 +162,11 @@ $isValid = $validation->withRequest($this->request)->run();
   }
   ```
 
-## uri segment
+## uri segment (positional arguments in url)
 
-- uri structure: `/class/method/seg3/seg4` 
+- uri structure: `/class/method/seg1/seg2` 
 
-- if url is: `/MyClass/myMethod/seg3/seg4` then controller method will look like:
+- if url is: `/MyClass/myMethod/seg1/seg2` then controller method will look like:
 ```php
 <?php
 namespace App\controllers;
