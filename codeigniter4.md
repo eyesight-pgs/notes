@@ -45,18 +45,31 @@ class UserModel extends Model {
 - select one row: `$query->gerFirstRow()`
 - get result: `$query->getResult()`
 - count number of rows: `$query->countAll()`
-
+  ```php
+  <?php
+  $row_count = $this->builder("my_table")
+    ->where("type", "some_type")
+    ->get()
+    ->getNumRows();
+  ```
 ## run raw query
 
 ```php
 <?php
 class SomeModel extends Model {
   public function someMethod() {
+    $this->table = "my_table";
     $raw_sql = "select * from users;";
-    $result_obj = $this->query($raw_sql);
+    $result_obj = $this->query($raw_sql); // $this->table property needs to be set (but it will not effect this sql)
     $result = $result_obj->getResult();
   }
 }
+// -----------
+// running raw query WITHOUT setting the `$this->table` property in model
+// or runnging raw query outside a model
+$db = db_connect();
+$query = $this->db->query("select * from users");
+$result = $query->getResult();
 ```
 
 ## update query
