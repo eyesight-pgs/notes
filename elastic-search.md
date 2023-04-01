@@ -22,6 +22,8 @@ elasticsearch-reset-password -u elastic
 # this will prompt for new password
 ```
 
+- documentation: `https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html`
+
 - shards are for indices
   - split api - increase shard count
   - shrink api - decrease shard count
@@ -107,5 +109,61 @@ Content-Type: application/json
 }
 ```
 
+## creating mapping
+
+```http
+PUT /students
+Content-Type: application/json
+
+{
+  "mapping": {
+    "properties": {
+      "fullname": { "type": "text" },
+      "dob": { "type": "date", "format": "strict_date_optional_time||epoch_millis" },
+      "gender": { "type": "text" },
+      "address": { "type": "text" },
+      "email": { "type": "keyword" }
+    }
+  }
+}
+```
+
+## get the mapping
+
+```http
+# get mapping of an index
+GET /students/_mapping
+
+# get mapping of one field
+GET /students/_mapping/field/address
+```
+
+## updating existing mapping
+
+adding new key to exiting mapping
+```http
+PUT /students/_mapping
+Content-Type: application/json
+
+{
+  "properties": {
+    "class": { "type": "integer" },
+    "report": {
+      "type": "nested"
+      "properties": {
+        "class": { "type": "integer", "coerce": false },
+        "percentage": { "type": "float" }
+      }
+    }
+  }
+}
+
+## mapping options
+
+- `"norms": false` - normaliztion, ranking; can be disabled if ranking not important for a field
+- `"doc_values": false` - enabled by default, it should be enabled for aggregate operations. disabling increases indexing speed.
+- `"coerce": false` - enable/disable automatic type coercion (enabled by default)
+- `"index": false` - exclude a field from searching
+- `"null_value": "NULL" - this is the default value should be used when document created with null value for this field. ES by default ignores null values & does not index it.
 
 
