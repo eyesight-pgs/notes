@@ -210,6 +210,12 @@ link: https://stackoverflow.com/q/10418975
 	`git config --local core.autocrlf input`
 - Checkout as-is, commit as-is (not conversion by git)
 	`git config --local core.autocrlf false`
+	
+### changing line ending for all files in a folder (directory)
+
+- find . -type f -exec dos2unix {} \;
+- here: `.` is current directory, `-type f` is all file, `\;` is end of exec statement
+- stackoverflow: https://stackoverflow.com/questions/7068179/convert-line-endings-for-whole-directory-tree-git
 
 # changing commit message of multiple commits
 
