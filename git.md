@@ -213,7 +213,7 @@ link: https://stackoverflow.com/q/10418975
 	
 ### changing line ending for all files in a folder (directory)
 
-- find . -type f -exec dos2unix {} \;
+- `find . -type f -exec dos2unix {} \;`
 - here: `.` is current directory, `-type f` is all file, `\;` is end of exec statement
 - stackoverflow: https://stackoverflow.com/questions/7068179/convert-line-endings-for-whole-directory-tree-git
 
