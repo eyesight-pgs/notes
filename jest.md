@@ -282,6 +282,21 @@ jest.mock('./my-class', () => {
 - restore: for mock it resets implementation to "no return" function; but for spys it restore original implementaion.
 
 
+## mocking an exported function in same file as of function being tested
+
+Ex:
+```ts
+// mock this
+export add(a, b) {
+  return a + b;
+}
+// test this function
+export calculate() {
+  const result = add(1+1);
+  console.log("result: ", result);
+}
+```
+Ans: https://github.com/facebook/jest/issues/936#issuecomment-545080082
 
 
 
