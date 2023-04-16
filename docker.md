@@ -92,14 +92,37 @@ containers in same custom bridge network...like: `ping my-container2`
 
 `docker cp my-file.ext my-container:/my/path/`
 
-# view logs
+## view logs
 
 - `docker logs my-container`
 - `docker logs my-container | tail`
 
+## do not invalidate CACHE on version bump in package.json
 
+If we update version field in package.json, even though dependencies are not changed, the `RUN yarn` step's CACHE will be invalidated & it will run again.
+Which consume lot of time.
 
+Easy solution is to use the multstage build + jq to extract dependencies & devDependencies. Here is one example:
 
+```Dockerfile
+# Builder stage
+FROM node:18 AS builder
+RUN apt-get update
+RUN apt-get install -y jq
+WORKDIR /hello-world
+COPY package.json /tmp/package.json
+RUN jq '{ dependencies, devDependencies }' < /tmp/package.json > /tmp/deps.json
+
+# Runtime stage
+FROM node:18
+WORKDIR /hello-world
+COPY .npmrc .
+COPY yarn.lock .
+COPY --from=builder /tmp/deps.json ./package.json
+RUN yarn
+COPY . .
+CMD ["yarn", "start"]
+```
 
 
 
