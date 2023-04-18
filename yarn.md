@@ -32,3 +32,8 @@ link: https://classic.yarnpkg.com/en/docs/cli/global
 	# global level
 	npm config set -L global foo bar
 	```
+
+## cache
+	
+- clear cache: `yarn cache clean`
+- view cached directories: `yarn cache dir`
