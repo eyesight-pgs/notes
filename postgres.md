@@ -430,4 +430,25 @@ select coalesce('', 'Hi') as val; -- val will be <empty string>
 
 https://www.postgresql.org/docs/current/static/functions-json.html
 
+## Common Table Expressions (CTE)
+
+Common Table Expressions (CTE) are a feature in SQL that allow you to define a temporary named result set that you can reference within a SQL statement.
+
+CTEs can be especially useful in queries that involve recursive queries, queries with complex joins, or queries with multiple subqueries. By defining a CTE for each subquery, you can break down a complex query into smaller, more manageable parts.
+
+CTEs are written using the WITH keyword, followed by a subquery that defines the temporary result set. The subquery can then be referenced within the same SQL statement, using the CTE name.
+
+```sql
+# Let's say we have two tables: orders and customers. We want to find the total number of orders placed by each customer
+
+WITH order_counts AS (
+  SELECT customer_id, count(*) AS total_orders
+  FROM orders
+  GROUP BY customer_id
+)
+SELECT c.customer_name, oc.total_orders
+FROM customers c
+JOIN order_counts oc ON c.customer_id = oc.customer_id;
+```
+
 
