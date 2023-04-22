@@ -125,5 +125,28 @@ CMD ["yarn", "start"]
 ```
 
 
+## Ubuntu & Debian - asking for input during docker build!
+
+```console
+apt-get upadte
+1. India    2. US   3. Aus
+...
+Geographic area: 
+```
+
+- proprt to select `Geographic area:`
+- soln: use `ARG DEBIAN_FRONTEND=noninteractive` in Docekrfile
+- link: https://github.com/Netflix/security_monkey/issues/1197#issuecomment-706606645
+
+- While installing packages
+
+```console
+apt-get install nginx
+Do you want to install [Y/n]:
+
+# soln: use -y
+# apt-get install -y nginx
+```
+
 
 
