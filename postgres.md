@@ -221,6 +221,19 @@ where true
 	and column_name like '%%'
 ```
 
+## sequence
+
+```
+-- creating new sequence
+create sequence my_sequence_seq
+increment 1
+start 15000;
+
+-- view current value of a sequence
+select last_value from my_sequence_seq;
+-- here last_value will have latest value
+```
+
 ## set next sequence number (serial/nextval)
 
 ```sql
