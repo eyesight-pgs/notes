@@ -89,6 +89,7 @@ scripts for package.json
     "start2": "ts-node-dev --respawn --transpile-only src/index.ts",
   },
 ```
+- --respawn - Keep watching for changes after the script has exited
 
 ## type for object literal
 
