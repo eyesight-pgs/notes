@@ -117,6 +117,7 @@ class My_table extends Model {
   ```
 - set: `$this->session->set(["key" => value])` or `$this->session->set(key, value)`
 - get: `$this->session->get(key)`
+- remove: `$this->session->remove(key)`
 
 ## validation
 
