@@ -4,11 +4,11 @@
 
 ssh-keygen -o
 
-# generating new SSH key pair for github for Windows
+# generating new SSH key pair for github for Windows & linux
 
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
-## check is agent is running
+## check if agent is running
 
 eval $(ssh-agent -s)
 
@@ -48,6 +48,12 @@ ssh -vvvT git@github.com
 		Hostname github.com
 		PreferredAuthentications publickey
 		IdentityFile github-ed25519
+
+	Host github.com
+		User git
+		Hostname github.com
+		PreferredAuthentications publickey
+		IdentityFile github-ed25519-another-account
 	```
 
 
