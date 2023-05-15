@@ -146,6 +146,12 @@ SELECT jsonb_array_length('["question","solved"]') AS length;
 SELECT json_array_length('["question","solved"]') AS length;
 ```
 
+## is array includes value? (is value in array?)
+
+```sql
+'my-value' = any(my_jsonb_column)
+```
+
 ## postgres add constraint:
 
 - with create table
