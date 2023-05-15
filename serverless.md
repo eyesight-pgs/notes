@@ -21,3 +21,6 @@ because both deployment commands will read and write to same .serverless folder
 serverless offline --stage=dev
 ```
 
+## troubleshooting
+
+About 90% of the failures occures due to wrong NodeJs version.
