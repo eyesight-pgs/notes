@@ -136,6 +136,16 @@ select
   from my_table mt
 ```
 
+## length of json / jsonb array
+
+- link: https://stackoverflow.com/a/33908392
+```sql
+-- jsonb
+SELECT jsonb_array_length('["question","solved"]') AS length;
+-- json
+SELECT json_array_length('["question","solved"]') AS length;
+```
+
 ## postgres add constraint:
 
 - with create table
