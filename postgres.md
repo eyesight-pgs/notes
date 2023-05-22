@@ -261,6 +261,10 @@ SELECT nextval('<table-name>_<column-name>_seq');
 SELECT setval('<table-name>_<column-name>_seq', (SELECT MAX(<column-name>) FROM <table-name>)+1);
 ```
 
+- note: reverting a transaction does not revert the sequence value
+  (it keeps incrementing).
+  link: [sequences-not-affected-by-transactions](https://stackoverflow.com/questions/2095917/sequences-not-affected-by-transactions)
+
 ## view timezone list (with more data)
 
 ```sql
