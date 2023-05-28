@@ -20,6 +20,19 @@ create database my-database;
 
 `select current_database();`
 
+## postgres equivalent of mysql's `describe <table name>`
+
+```sql
+select
+column_name,
+data_type,
+character_maximum_length,
+is_nullable,
+column_default
+from INFORMATION_SCHEMA.COLUMNS
+where table_name = '<table name>';
+```
+
 ## create table
 
 ```sql
