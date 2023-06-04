@@ -138,6 +138,8 @@ git config --global alias.di "diff"
 git config --global alias.dis "diff --staged"
 git config --global alias.di- "diff --"
 git config --global alias.dis- "diff --staged --"
+git config --global alias.smdf "submodule deinit -f ."
+git config --global alias.smui "submodule update --init"
 ```
 
 ## git difftools
@@ -276,5 +278,18 @@ link: https://github.com/conventional-changelog/commitlint
 ## github ssh
 
 please check ssh.md for details
+
+## submodule
+
+```sh
+# adding a submodule
+git submodule add <git-repo-clone-url> <name>
+git submodule add git@exaple.com
+
+## resetting all submodules (delete all submodules & clone again)
+git submodule deinit -f .
+git submodule update --init
+```
+
 
 
