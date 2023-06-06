@@ -5,6 +5,10 @@
 
 - default postgres password: `postgresql`
 
+## print current postgres server version
+
+`SELECT version();`
+
 ## create new db:
 
 ```sql
