@@ -142,10 +142,11 @@ jest.mock("axios");
 
 describe("desc 1", () => {
   test("test 1", () => {
-    const getMock = jest.spyOn(axios, "get").mockResolvedValueOnce({ data: responseData });
+    const postMock = jest.spyOn(axios, "post").mockResolvedValueOnce({ data: responseData });
     // ... other code
-    expect(getMock.mock.calls.length).toBe(1);
-    getMock.mockReset();
+    expect(postMock.mock.calls.length).toBe(1);
+    expect(postMock).toHaveBeenCalledWith(url, reqBody);
+    postMock.mockReset();
   });
 });
 ```
