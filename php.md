@@ -75,7 +75,15 @@ post_max_size = 512M
 upload_max_filesize = 10M
 ```
 
+## php-fpm
 
+- as which user php-fpm service runs?
+    - link: https://unix.stackexchange.com/questions/30190/how-do-i-set-the-user-of-php-fpm-to-be-php-user-instead-of-www-data
+
+- in ubuntu
+    - php-fpm location: `/etc/php/8.1/fpm`
+    - php.ini location: `/etc/php/8.1/fpm/php.ini`
+    - starting php-fpm service: `service php8.1-fpm start`
 
 
 
