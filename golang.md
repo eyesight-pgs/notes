@@ -20,7 +20,7 @@ U(struct{name string}{"Foo"})
 
 ## Usual patterns in golang:
 
-```
+```go
 struct
 
 method

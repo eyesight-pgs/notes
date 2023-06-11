@@ -54,6 +54,15 @@ v                               |
  d'<a-zA-Z>     - delete from current position to mark <a-zA-Z>
 ```
 
+- example:
+- let us say I am on line 30
+- press `ma` to mark line number 30
+- scroll to say line 100
+- now to go back to line 30, press `'a`
+- `\`a` (<back tick>a) takes you to exact cursor position
+
+
+
 `a-z` works within single file, where as `A-Z` works between files
 
 ## editing in a stream
