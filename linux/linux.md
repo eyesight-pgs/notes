@@ -70,3 +70,14 @@ alias n='nvim'
 
 open `about:support` in firefox
 
+## change system time
+
+```bash
+# disable ntp
+sudo timedatectl set-ntp false
+# set date time (format: yyyy-mm-dd hh:mm:ss - 24 hour time format)
+sudo timedatectl set-time "1999-12-31 13:40:55"
+# verify
+timedatectl
+```
+
