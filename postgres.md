@@ -501,4 +501,20 @@ FROM customers c
 JOIN order_counts oc ON c.customer_id = oc.customer_id;
 ```
 
+## select from values
+
+```sql
+select * from (
+  values
+    ('foo', 10),
+    ('bar', 20)
+) t(name, age);
+
+-- OR without column name
+select * from (
+  values
+    ('foo', 10),
+    ('bar', 20)
+) t;
+```
 
