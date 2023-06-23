@@ -277,6 +277,11 @@ SELECT nextval('<table-name>_<column-name>_seq');
 -- if next sequence value is wrong, then correct it by:
 SELECT setval('<table-name>_<column-name>_seq', (SELECT MAX(<column-name>) FROM <table-name>)+1);
 ```
+```sql
+SELECT currval(pg_get_serial_sequence('my_table', 'my_column')); -- this query to succeed, we need to run nextval atleast once
+-- select nextval(pg_get_serial_sequence('my_table', 'my_column'));
+select setval(pg_get_serial_sequence('my_table', 'my_column'), (select max(my_column)  from my_table) + 1);
+```
 
 - note: reverting a transaction does not revert the sequence value
   (it keeps incrementing).
