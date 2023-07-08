@@ -10,7 +10,10 @@ config file: ~/.config/mpd/mpd.conf
 
 ## mpc
 
-basic commands:
+- Add following to .bashrc `export MPD_HOST="${HOME}/.config/mpd/socket"`. Without this mpc won't be able to connect to mpd.
+
+- basic commands:
+```bash
 mpc help
 mpc --host=/home/USER_NAME/.config/mpd/socket
 mpc --host=/home/USER_NAME/.config/mpd/socket search title "my fav.. song"
@@ -19,8 +22,10 @@ mpc --host=/home/USER_NAME/.config/mpd/socket play
 mpc --host=/home/USER_NAME/.config/mpd/socket pause
 mpc --host=/home/USER_NAME/.config/mpd/socket volume +5
 mpc --host=/home/USER_NAME/.config/mpd/socket volume 50
+```
+
 
 ## ncmpcpp
 
-config file: ~/.config/ncmpcpp/ncmpcpp.conf
+config file: `~/.config/ncmpcpp/ncmpcpp.conf`
 
