@@ -26,5 +26,17 @@ yarn config list --verbose
 	`yarn config set prefix <filepath>`<br>
 	ex:  yarn config set prefix ~/.yarn ===> it wil install packages to ~/.yarn/bin
 
+## cache clean
+
+```bash
+# local
+yarn cache clean
+
+# global
+yarn cache clean --mirror
+
+# local & global
+yarn cache clean --all
+```
 
 
