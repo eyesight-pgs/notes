@@ -12,6 +12,9 @@ rm -r ~/.cache/thumbnails/*
 
 # Delete yay cache
 yay -Sc
+
+# yarn cache clean
+yarn cache clean --all
 ```
 
 
