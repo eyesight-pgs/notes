@@ -291,5 +291,10 @@ git submodule deinit -f .
 git submodule update --init
 ```
 
+## find branch name from commit hash
 
+- link: https://stackoverflow.com/questions/2706797/finding-what-branch-a-git-commit-came-from
+- `git branch -a --contains <commit>`
+- `git reflog show --all | grep a871742`
+- `git log --merges <commit>..` - subsequent merge commit
 
