@@ -298,3 +298,13 @@ git submodule update --init
 - `git reflog show --all | grep a871742`
 - `git log --merges <commit>..` - subsequent merge commit
 
+## rename branch main to master (in local and remote)
+```bash
+git branch -m main master # main --> master in local
+git branch # verify
+git push -u origin master # create new branch in remote
+# make master as default branch in remote (github)
+git push origin :main # delete main branch in remote
+```
+
+
