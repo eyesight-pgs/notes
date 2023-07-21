@@ -307,4 +307,11 @@ git push -u origin master # create new branch in remote
 git push origin :main # delete main branch in remote
 ```
 
+## deleting a tag (in local and remote)
+```bash
+# delete local tag 'v1.0.0'
+git tag -d v1.0.0
+# delete same tag ('v1.0.0') in remote (like github)
+git push origin :refs/tags/12345
+```
 
