@@ -43,14 +43,17 @@ TLDR:
   - run `echo "LANG=en_US.UTF-8" > /etc/locale.conf`
 1. network
   - run `echo "my_host_name" > /etc/hostname`
-  - install NetworkManager `pacman -S NetworkManager`
+  - install NetworkManager `pacman -S networkmanager`
   - enable NetworkManager `systemctl enable NetworkManager`
   - check internet `ping 8.8.8.8`
 1. run `mkinitcpio -P`
 1. set root password, run `passwd`
-1. create a normal user `useradd ...`
+1. create a normal user `useradd -m -G wheel user_name`
 1. boot loader (most difficult one as it rarely works)
-  - install grub
+  - install grub `pacman -S grub efibootmgr`
+  - `grub-install -target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB`
+  - `grub-mkconfig -o /boot/grub/grub.cfg`
+1. exit from chroot - `exit`
 1. unmount using `umount -R /mnt`
 1. reboot (congratulations!! installation completed\*)
 1. install and run neofetch
