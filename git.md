@@ -248,6 +248,11 @@ git push --force origin example-branch
 
 `git log --pretty=format:"%h%x09%an%x09%s" --ancestry-path <commit-ish-old>..<commit-ish-new> -- path/to/file/or/folder`
 
+## search commit by content (string/regexp) (search for deleted lines)
+
+- `git log -S <string> path/to/file`
+- `git log -G <regex> path/to/file`
+
 ## git rebase
 
 - `git rebase <base>` - this will rebase current branch on top of <base>. Here <base> is commit-sh.
