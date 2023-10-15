@@ -164,6 +164,28 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 
 `:%s/foo/bar/g`
 
+## increment numbers
+
+- increment sinlgle value: `v` and select the number we want to increment andpress
+press `ctrl`+`a`
+- increment a column of vlaues with each row having one value higher than 
+previous row:
+ex:
+```txt
+0
+0
+0
+
+=== to ===>
+
+1
+2
+3
+```
+first select the column using `ctrl`+`v` and down arrow. then `g` followed by
+`ctrl`+`a`
+
+
 ## missing features
 
 - vscode like smart selection missing
