@@ -202,6 +202,12 @@ class MyClass extends BaseController {
 <!-- some html here -->
 ```
 
+## truncate
+
+codeigniter4 truncate() function internally uses drop query. but db user should
+not have access to drop query.
+so use raw query to truncate tables: `truncate table table_name`
+
 ## upgrading codeigniter version to v4
 
 - Controller file name should start with Capital letter
@@ -293,6 +299,6 @@ class MyClass extends BaseController {
       // $this->myModel->myFunc();
     }
   }
-
+- select max: `select_max()` ==> `selectMax()`
 
 
