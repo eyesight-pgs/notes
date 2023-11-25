@@ -523,3 +523,29 @@ select * from (
 ) t;
 ```
 
+
+## function uuid_generate_v4() does not exist
+`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`
+
+
+## relation "taqble_id_seq" does not exist
+```sql
+CREATE SEQUENCE table_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+```
+
+## change datatype of existing column
+```sql
+ALTER TABLE notification_group 
+ALTER COLUMN notification_group_id TYPE int -- datatype change
+USING notification_group_id::int; -- onver datatype of exiting rows
+```
+
+
+
+
+
