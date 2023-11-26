@@ -95,7 +95,7 @@ git config --global --edit # manually editing config
 
 ## adding git alias
 
-```sh
+```bash
 git config --global alias.ps "push"
 git config --global alias.psf "push --force-with-lease"
 git config --global alias.pl "pull"
@@ -123,8 +123,10 @@ git config --global alias.cmm "commit -m "
 git config --global alias.cma "commit --amend"
 git config --global alias.cmane "commit --amend --no-edit"
 git config --global alias.lg "log"
-git config --global alias.lgo "log --oneline --decorate --all --graph"
-git config --global alias.lgo11 "log --oneline --decorate --all --graph -11"
+# git config --global alias.lgo "log --oneline --decorate --all --graph"
+# git config --global alias.lgo11 "log --oneline --decorate --all --graph -11"
+git config --global alias.lgo "log --oneline"
+git config --global alias.lgo11 "log --oneline -11"
 git config --global alias.ss "status"
 git config --global alias.sh "stash"
 git config --global alias.shp "stash pop"
