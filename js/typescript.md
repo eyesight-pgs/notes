@@ -95,4 +95,17 @@ scripts for package.json
 
 `type ObjectLiteral = Record<string, any>; // allows all object literals. ex: { name: "Foo" }`
 
+## mentioning type location in package.json
 
+```json
+{
+  ...
+  "typesVersions": {
+    "*": {
+      "test-helper": ["./dist/test/index.d.ts"]
+    }
+  },
+}
+```
+this indicates typescript that types for `/test-helper` is present at location:
+`./dist/test/index.d.ts`
