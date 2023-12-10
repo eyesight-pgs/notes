@@ -250,6 +250,10 @@ git push --force origin example-branch
 
 `git log --pretty=format:"%h%x09%an%x09%s" --ancestry-path <commit-ish-old>..<commit-ish-new> -- path/to/file/or/folder`
 
+## git perfect log
+
+`git log --oneline -11 --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"`
+
 ## search commit by content (string/regexp) (search for deleted lines)
 
 - `git log -S <string> path/to/file`
