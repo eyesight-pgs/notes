@@ -81,3 +81,26 @@ sudo timedatectl set-time "1999-12-31 13:40:55"
 timedatectl
 ```
 
+## convert line ending between CRLF and LF
+
+```bash
+for file in *.txt; do
+    sed -i "s/\r$//" "$file";
+done;
+```
+
+Better way:
+
+```bash
+# note: need to install package called `dos2unix`
+
+# CRLF ---> LF
+find . -type f -name "*.txt" -exec dos2unix {} \;
+
+# LF ---> CRLF
+find . -type f -name "*.txt" -exec unix2dos {} \;
+```
+
+
+
+
