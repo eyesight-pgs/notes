@@ -127,6 +127,7 @@ git config --global alias.lg "log"
 # git config --global alias.lgo11 "log --oneline --decorate --all --graph -11"
 git config --global alias.lgo 'log --oneline --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"'
 git config --global alias.lgo11 'log --oneline -11 --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"'
+git config --global alias.rb "rebase"
 git config --global alias.ss "status"
 git config --global alias.sh "stash"
 git config --global alias.shp "stash pop"
