@@ -15,7 +15,7 @@ TLDR:
   - reboot
 
 
-1. check internet - `ping 8.8.8.8`
+1. check internet - `ping 9.9.9.9`
 1. `timedatectl set-ntp true`
 1. disk partion (most dangerous step as you could loose your data)
   - use a tool like fdisk / cfdisk (also `lsblk` is your friend)
