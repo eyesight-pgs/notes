@@ -109,3 +109,36 @@ scripts for package.json
 ```
 this indicates typescript that types for `/test-helper` is present at location:
 `./dist/test/index.d.ts`
+
+
+## prettify types
+
+On hover over a type show all the property names of that type
+
+```ts
+// this is a wrapper type which reveals inner properties
+// demo: https://youtube.com/shorts/2lCCKiWGlC0?si=e6dWwSF8hkk8DNWv
+type Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};
+```
+
+```ts
+// imagin these interfaces defined in different file
+interface Animal {
+    legs: number;
+    name: string;
+}
+
+interface Human extends Animal {
+    job: string;
+}
+
+function main() {
+    const person1: Human = {}; // try to hover over Human type - actual properties ARE NOT visible
+    const person2: Prettify<Human> = {}; // try to hover over type - actual properties ARE visible
+}
+```
+
+
+
