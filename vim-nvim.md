@@ -185,6 +185,10 @@ ex:
 first select the column using `ctrl`+`v` and down arrow. then `g` followed by
 `ctrl`+`a`
 
+## switch to previous buffer
+
+<Ctrl-^>
+
 
 ## missing features
 
