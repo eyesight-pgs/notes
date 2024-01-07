@@ -546,6 +546,24 @@ USING notification_group_id::int; -- onver datatype of exiting rows
 ```
 
 
+## postgres dump schema
 
+`pg_dump --schema only`
+
+```bash
+# export single table
+pg_dump -h source_host -U source_user -d source_db -n source_schema --schema-only -F c -f schema_dump_file.dump
+
+# import single table
+pg_restore -h dest_host -U dest_user -d dest_db -n dest_schema -F c -c --schema-only schema_dump_file.dump | psql -h dest_host -U dest_user -d dest_db
+
+# ----------------------
+
+# export complete db
+pg_dump -h source_host -U source_user -d source_db --schema-only -F c -f schema_dump_file.dump
+
+# import complete db
+pg_restore -h dest_host -U dest_user -d dest_db --schema-only -F c schema_dump_file.dump | psql -h dest_host -U dest_user -d dest_db
+```
 
 
