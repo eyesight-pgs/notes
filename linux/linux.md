@@ -101,6 +101,10 @@ find . -type f -name "*.txt" -exec dos2unix {} \;
 find . -type f -name "*.txt" -exec unix2dos {} \;
 ```
 
+## find keycode for a key press
+
+`xev`
+
 
 
 
