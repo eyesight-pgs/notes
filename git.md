@@ -330,3 +330,11 @@ git tag -d v1.0.0
 git push origin :refs/tags/12345
 ```
 
+## parent commits for merge commits (HEAD^1 and HEAD^2)
+`HEAD^1` and `HEAD^2` are used with merge commits to specify which parent you're referring to.
+
+- `HEAD^1`: Refers to the first parent of the merge commit. This is typically the branch you were on when you initiated the merge.
+- `HEAD^2`: Refers to the second parent of the merge commit. This is the branch that was merged into the current branch.
+
+So, in short, HEAD^1 is like looking at your past, and HEAD^2 is like peeking into the branch you just merged.
+
