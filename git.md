@@ -55,6 +55,11 @@ link: https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-l
   OR using `git diff`
   - `git diff commit-ish~ commit-ish` ex: `git diff HEAD~ HEAD`
 
+## git diff
+- `git diff <old-commit>` `<new-commit>`
+- find common base branch for 2 commits: `git merge-base <commit1> <commit2>`
+
+
 Note: show commit details for merge commits: https://stackoverflow.com/questions/40986518/how-to-git-show-the-diffs-for-a-merge-commit
 
 ## push with "--force " vs "--force-with-lease"
