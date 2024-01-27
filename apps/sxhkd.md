@@ -1,5 +1,11 @@
 # sxhkd
 
-## config file
+Config file:
+$XDG_CONFIG_HOME/sxhkd/sxhkdrc
 
- $XDG_CONFIG_HOME/sxhkd/sxhkdrc
+Restart after config update: 
+```bash
+killall sxhkd
+sxhkd &
+```
+
