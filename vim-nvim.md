@@ -189,6 +189,22 @@ first select the column using `ctrl`+`v` and down arrow. then `g` followed by
 
 <Ctrl-^>
 
+## tab
+
+`:tabnew`, `:0tabnew`, `:$tabnew ./temp.txt`
+
+```txt
+                       current
+                        tab
+                         |
+ _____ ______ ______ ____*____ ______ ______
+|_____|______|______|_________|______|______|
+^-.                 ^-.       ^-.    ^-.    ^--- :$tabnew
+  `- :0tabnew         |         |      |
+                      |         |      `- :+tabnew
+                 :-tabnew       `- :tabnew
+                                   :.tabnew
+```
 
 ## missing features
 
