@@ -265,13 +265,22 @@ git push --force origin example-branch
 
 `git log --oneline -11 --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"`
 
-## search commit by content (string/regexp) (search for deleted lines)
+## search commit
+```bash
+# search by commit message
+git log --grep="<part-of-commit-msg>"
+# search by commit message - case insensitive
+git log --grep="<part-of-commit-msg>" -i
 
-- `git log -S <string> path/to/file`
-- `git log -G <regex> path/to/file`
+## search by file content (search for deleted lines)
+# search by file content
+git log -S <string> [path/to/file]
+# search by file content using regex
+git log -G <regex> [path/to/file]
 
-## git log - filter by author
-`git log --author "<author-name>"`
+# search (author) by author
+git log --author="<author-name>"
+```
 
 ## git rebase
 
