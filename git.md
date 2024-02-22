@@ -138,6 +138,7 @@ git config --global alias.lgo11 'log --oneline -11 --color=always --format="%C(a
 git config --global alias.rb "rebase"
 git config --global alias.ss "status"
 git config --global alias.sh "stash"
+git config --global alias.shm "stash push -m"
 git config --global alias.shp "stash pop"
 git config --global alias.shl "stash list"
 git config --global alias.shs "stash show"
