@@ -270,6 +270,9 @@ git push --force origin example-branch
 - `git log -S <string> path/to/file`
 - `git log -G <regex> path/to/file`
 
+## git log - filter by author
+`git log --author "<author-name>"`
+
 ## git rebase
 
 - `git rebase <base>` - this will rebase current branch on top of <base>. Here <base> is commit-sh.
