@@ -279,7 +279,7 @@ git log -S <string> [path/to/file]
 # search by file content using regex
 git log -G <regex> [path/to/file]
 
-# search (author) by author
+# search by author
 git log --author="<author-name>"
 ```
 
