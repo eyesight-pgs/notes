@@ -123,12 +123,12 @@ Step3: validate the stetup
 
 
 ## References
-
 - [Architecture](https://github.com/jaegertracing/jaeger?tab=readme-ov-file#jaeger---a-distributed-tracing-system)
 - [@opentelemetry/exporter-jaeger](https://www.npmjs.com/package/@opentelemetry/exporter-jaeger)
 - [Bypass the Jaeger Agent](https://www.jaegertracing.io/docs/1.54/troubleshooting/#bypass-the-jaeger-agent)
-
-
+- [api-docs](https://open-telemetry.github.io/opentelemetry-js/)
+- [migration](https://opentelemetry.io/docs/migration/opentracing/)
+- [without-exporter-jaeger](https://medium.com/@sevicdev/tracing-node-js-microservices-with-opentelemetry-ccdd980f8d51)
 
 
 
