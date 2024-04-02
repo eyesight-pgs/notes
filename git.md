@@ -283,6 +283,9 @@ git log -G <regex> [path/to/file]
 git log --author="<author-name>"
 ```
 
+## search branch (by author)
+git for-each-ref --format='%(authordate:short) %09 %(authorname) %09 %(refname)' --sort=authordate | grep <author_name>
+
 ## git rebase
 
 - `git rebase <base>` - this will rebase current branch on top of <base>. Here <base> is commit-sh.
