@@ -566,4 +566,14 @@ pg_dump -h source_host -U source_user -d source_db --schema-only -F c -f schema_
 pg_restore -h dest_host -U dest_user -d dest_db --schema-only -F c schema_dump_file.dump | psql -h dest_host -U dest_user -d dest_db
 ```
 
+## identify and kill blocking query (which locks the database/tables)
 
+```sql
+-- VIEW
+SELECT *
+FROM pg_stat_activity
+where state <>'idle';
+
+-- KILL
+SELECT pg_terminate_backend(__PID_OF_QUERY_);
+```
