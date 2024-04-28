@@ -25,6 +25,14 @@ fi
 ```
 
 
+function call
+```bash
+hello() {
+    echo "hello $1"
+}
+hello "Mr. Foo"
+```
+
 
 
 
