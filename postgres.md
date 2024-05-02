@@ -577,3 +577,8 @@ where state <>'idle';
 -- KILL
 SELECT pg_terminate_backend(__PID_OF_QUERY_);
 ```
+
+## Explain Analyze a query
+```sql
+explain analyze select email from user where user_id in (1,2,3)
+```
