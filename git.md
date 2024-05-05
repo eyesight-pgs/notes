@@ -191,6 +191,10 @@ To get diff from github, put .diff at the end of PR's url
 ## appying patch
 
 ```bash
+## using `patch` command (works fine for suckless patches)
+patch -N --verbose -i mychanges.patch
+
+## using  `git apply` command (usually don't work with suckless patches)
 git apply --stat mychanges.patch
 git apply --check mychanges.patch
 git apply --reject --whitespace=fix mychanges.patch
