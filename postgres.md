@@ -237,7 +237,7 @@ postgres=# SELECT 'a' || 'b' || 'c' || 'd' AS result;
 (1 row)
 ```
 
-## List all the columns (of db, of table)
+## List all the columns (of db, of table) / search columns / find columns
 
 ```sql
 select
