@@ -8,6 +8,10 @@ Usual combination:
 
 ## Mocking simple function (which is deeply nested in import hiararchy)
 
+index.js ---> middle.js ---> math.js (mock add fucntion here)
+
+The following way of stubbing works even if the middle.js is a CLASS consuming add funtion from math.js
+
 ```js
 // index.js
 const {sum} = require("./middle");
