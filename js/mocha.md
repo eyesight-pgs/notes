@@ -7,11 +7,9 @@ Usual combination:
 - proxyquire: prevent importing file before stubing
 
 ## Mocking simple function (which is deeply nested in import hiararchy)
-
 index.js ---> middle.js ---> math.js (mock add fucntion here)
 
 The following way of stubbing works even if the middle.js is a CLASS consuming add funtion from math.js
-
 ```js
 // index.js
 const {sum} = require("./middle");
@@ -92,7 +90,6 @@ describe("testing generateNumber function", () => {
 ```
 
 ## Debugging if stub is being called
-
 ```js
 // execute main test function
 // ...
@@ -101,3 +98,49 @@ console.log('Stub called:', addStub.called);
 console.log('Stub call count:', addStub.callCount);
 console.log('Stub call args:', addStub.getCall(0) && addStub.getCall(0).args);
 ```
+
+## Mocking a class method
+Mocking a class method is extremely simple compared to a simple function
+```js
+// my-class.js
+class MyClass {
+    ten() { return 10; }
+    async twenty() { return 20; }
+}
+```
+```js
+// my-test.spec.js
+// sync
+funcStub = sinon.stub().returns(11);
+MyClass.prototype.ten = funcStub;
+expect(funcStub.calledOnce).to.be.true;
+
+// async
+asyncFuncStub = sinon.stub().resolves(21); // resolves() for aync function
+MyClass.prototype.twenty = asyncFuncStub;
+expect(asyncFuncStub.calledOnce).to.be.true;
+```
+
+## Check for arguments to stubs
+```js
+// check for first argument is as expected
+const firstArg = myStub.getCall(0)?.args?.[0];
+expect(firstArg).to.equal({"foo": "bar"});
+```
+
+## Check for not undefined
+```js
+expect(myVal).to.not.undefined;
+```
+
+## Premitive comparison vs object comparison
+```js
+// premitive comparison
+expect(10).to.equal(10);
+expect("foo").to.equal("foo");
+expect(true).to.equal(true);
+
+// object comparison
+expect({"ten": 10}).to.deep.equal({"ten": 10});
+```
+
