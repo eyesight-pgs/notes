@@ -7,7 +7,6 @@
 ```
 
 ## display all errors
-
 ```php
 <?php
 ini_set('display_startup_errors', '1');
@@ -19,7 +18,6 @@ ini_set('error_log', 'php_errors.log');
 ```
 
 in php.ini file:
-
 ```
 error_reporting = E_ALL
 display_errors = On
@@ -31,11 +29,9 @@ error_log = php_errors.log
 ```
 
 ## exploring php
-
 link: https://github.com/wilmoore/php-version/wiki/Exploring-PHP
 
 ### Identify full path to PHP binaries
-
 ```
 which php
 which php-fpm
@@ -48,7 +44,6 @@ which phpize
 ```
 
 ### View manual pages
-
 ```
 man php
 man php-fpm
@@ -57,7 +52,6 @@ man phpize
 ```
 
 ### useful dynamic extensions
-
 ```
 curl
 intl
@@ -67,7 +61,6 @@ zip
 ```
 
 ### max
-
 ```
 max_execution_time = 3600
 memory_limit = 1024M
@@ -76,7 +69,6 @@ upload_max_filesize = 10M
 ```
 
 ## php-fpm
-
 - as which user php-fpm service runs?
     - link: https://unix.stackexchange.com/questions/30190/how-do-i-set-the-user-of-php-fpm-to-be-php-user-instead-of-www-data
 
@@ -84,16 +76,5 @@ upload_max_filesize = 10M
     - php-fpm location: `/etc/php/8.1/fpm`
     - php.ini location: `/etc/php/8.1/fpm/php.ini`
     - starting php-fpm service: `service php8.1-fpm start`
-
-
-
-
-
-
-
-
-
-
-
 
 
