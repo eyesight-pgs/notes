@@ -582,3 +582,31 @@ SELECT pg_terminate_backend(__PID_OF_QUERY_);
 ```sql
 explain analyze select email from user where user_id in (1,2,3)
 ```
+
+## custom data type (enum as data type)
+```sql
+CREATE TYPE os AS ENUM (
+  'arch_linux',
+  'debian',
+  'redhat'
+);
+```
+safe way
+```sql
+DO $$ BEGIN
+  CREATE TYPE os AS ENUM (
+    'arch_linux',
+    'debian',
+    'redhat'
+  )
+EXCEPTION
+  WHEN duplicate_object THEN NULL
+END $$;
+```
+
+
+
+
+
+
+
