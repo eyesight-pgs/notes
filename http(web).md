@@ -20,3 +20,8 @@
 - add: if item present then replace
 - replace: if item not present then throw error
 
+## url naming convention
+use dash(-) as word separator
+- reference: [from google](https://developers.google.com/search/docs/crawling-indexing/url-structure)
+
+
