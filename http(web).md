@@ -21,7 +21,7 @@
 - replace: if item not present then throw error
 
 ## url naming convention
-use dash(-) as word separator
+use dash(-) as word separator. Ex: `https://exmaple.com/current-user` (instead of `https://exmaple.com/current_user`)
 - reference: [from google](https://developers.google.com/search/docs/crawling-indexing/url-structure)
 
 
