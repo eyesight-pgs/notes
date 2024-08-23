@@ -287,6 +287,15 @@ select setval(pg_get_serial_sequence('my_table', 'my_column'), (select max(my_co
   (it keeps incrementing).
   link: [sequences-not-affected-by-transactions](https://stackoverflow.com/questions/2095917/sequences-not-affected-by-transactions)
 
+- exporting sequence numbers
+useful during importing schema using DDL queries. since the dbeaver DDL queries do not include sequence no,
+we can use following query to get the sequence no details
+```sql
+SELECT 'SELECT setval(' || quote_literal(quote_ident(schemaname) || '.' || sequencename) || ', ' || last_value || ', true);' as queries
+FROM pg_sequences
+where last_value is not null;
+```
+
 ## view timezone list (with more data)
 
 ```sql
