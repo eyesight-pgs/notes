@@ -509,7 +509,9 @@ JOIN order_counts oc ON c.customer_id = oc.customer_id;
 ```sql
 -- creating table on the fly using `WITH` and `VALUES`
 WITH item (item_name, item_value) as (
-  VALUES('foo', '10')
+  VALUES
+  ('foo', '10'),
+  ('bar', '11')
 )
 select * from item
 ```
