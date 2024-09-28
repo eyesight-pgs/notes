@@ -15,6 +15,9 @@ yay -Sc
 
 # yarn cache clean
 yarn cache clean --all
-```
 
+# delete unnecessary docker containers and images
+docker ps -a
+docker images
+```
 
