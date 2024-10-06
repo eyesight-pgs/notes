@@ -22,5 +22,9 @@ yarn cache clean --all
 # delete unnecessary docker containers and images
 docker ps -a
 docker images
+
+# clean npm cache
+npm cache clean --force
 ```
+
 
