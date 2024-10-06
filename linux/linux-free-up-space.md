@@ -7,6 +7,9 @@
 # journal - To delete, the 1d represents that it will delete logs more than a day older
 journalctl --vacuum-time=1d
 
+# Delete cached files
+rm -r ~/.cache
+
 # Delete thumbnail cache without a cleaner software:
 rm -r ~/.cache/thumbnails/*
 
