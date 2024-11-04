@@ -623,8 +623,53 @@ EXCEPTION
 END $$;
 ```
 
+## rank with partition by
 
+https://chatgpt.com/share/672870ac-88ec-8006-9c06-d24d222fda14
 
+```txt
+postgres 
+how to rank with partition
+
+Use the RANK() window function along with PARTITION BY. The partition part groups the rows based on whatever column you specify, and the rank function gives a rank to each row within each partition. Here’s the gist:
+
+SELECT 
+    your_column, 
+    some_other_column,
+    RANK() OVER(PARTITION BY partition_column ORDER BY order_column DESC) AS rank
+FROM 
+    your_table;
+```
+
+```txt
+give me an example with marks table with student_id, marks, class (ex: 7th class or 7th standard or 7th grade)
+and we want to rand students based on marks within each class
+
+student_id	marks	class
+1		88	7th grade
+2		76	7th grade
+3		92	7th grade
+4		85	8th grade
+5		90	8th grade
+6		78	8th grade
+
+SELECT 
+    student_id,
+    marks,
+    class,
+    RANK() OVER(PARTITION BY class ORDER BY marks DESC) AS rank
+FROM 
+    marks;
+
+Result:
+student_id	marks	class	rank
+3		92	7th grade	1
+1		88	7th grade	2
+2		76	7th grade	3
+5		90	8th grade	1
+4		85	8th grade	2
+6		78	8th grade	3
+```
 
 
 
