@@ -671,6 +671,24 @@ student_id	marks	class	rank
 6		78	8th grade	3
 ```
 
+## List all index
+```sql
+SELECT
+  t.relname AS table_name,
+  string_agg(a.attname, ', ') AS column_names,
+  i.relname AS index_name
+FROM pg_class t
+JOIN pg_index ix ON t.oid = ix.indrelid
+JOIN pg_class i ON i.oid = ix.indexrelid
+JOIN pg_attribute a ON a.attnum = ANY(ix.indkey)
+AND a.attrelid = t.oid
+WHERE
+  t.relkind = 'r'  -- Only regular tables
+  and t.relname not like 'pg_%'
+GROUP BY t.relname, i.relname
+ORDER BY t.relname, i.relname;
+```
+
 
 
 
