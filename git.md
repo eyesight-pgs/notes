@@ -104,6 +104,7 @@ git config --global --edit # manually editing config
 ## adding git alias
 
 ```bash
+git config --global alias.cl "clone"
 git config --global alias.ps "push"
 git config --global alias.psf "push --force-with-lease"
 git config --global alias.pl "pull"
