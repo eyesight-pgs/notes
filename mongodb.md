@@ -46,7 +46,7 @@ db.animals.updateOne(
 )
 ```
 
-## delete a specific item from an nested array:delete a specific item from an nested array
+## delete a specific item from an nested array
 Ex:
 fruit collection
 ```json
