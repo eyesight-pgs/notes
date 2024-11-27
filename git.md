@@ -334,6 +334,9 @@ git submodule add git@exaple.com
 ## resetting all submodules (delete all submodules & clone again)
 git submodule deinit -f .
 git submodule update --init
+
+## updating submodules commits to latest
+git submodule update --remote --merge
 ```
 
 ## find branch name from commit hash
