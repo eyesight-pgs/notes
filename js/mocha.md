@@ -143,4 +143,21 @@ expect(true).to.equal(true);
 // object comparison
 expect({"ten": 10}).to.deep.equal({"ten": 10});
 ```
+## sinon mocking - returnming mocked value
+```js
+const sinon = require('sinon');
+const sandbox = sinon.createSandbox();
+const mock = sandbox.stub();
+
+// async
+mock.resolves({ten: 10});
+```
+Different return value on 1st and 2nd call
+```js
+mock
+  .onFirstCall.resolves({ten: 10})
+  .onSecondCall.resolves({twe: 20});
+```
+
+
 
