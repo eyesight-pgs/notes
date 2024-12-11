@@ -158,6 +158,43 @@ mock
   .onFirstCall.resolves({ten: 10})
   .onSecondCall.resolves({twe: 20});
 ```
+## proxyquire
+```js
+// db.js
+async function insertItem(fullName, sqlClient) {
+  const row = await sqlClient.query(`insert into user (full_name) values (${fillName}) returning *`);
+  return row;
+}
+module.exports = {
+  insertItem
+};
+```
+```js
+// my-controller.js
+const db = require("./db.js");
 
+async function postUser(fullName, sqlClient) {
+  const row = await db.insertItem(fullName, sqlClient);
+}
+module.exports = {
+  postUser
+}
+```
+```js
+// test.js
+const proxyquire = require("proxyquire");
+const sinon = require("sinon");
 
+it("should call db function once", async () => {
+  cosnt sandbox = sinon.createSandbox();
+  const controller = proxyquire("./my-controller.js", {
+    "./db": {
+      insertItem: sandbox.stub().onFirstCall().resolve({userId: 1})
+    }
+  });
+  const sqlClientMock = sandbox.stub()/* .return(... */;
+  const row = await controller.postUser("Test user 1", sqlClientMock);
+  expect(...
+});
+```
 
