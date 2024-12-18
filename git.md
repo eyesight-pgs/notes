@@ -155,6 +155,7 @@ git config --global alias.di- "diff --"
 git config --global alias.dis- "diff --staged --"
 git config --global alias.smdf "submodule deinit -f ."
 git config --global alias.smui "submodule update --init"
+git config --global alias.undo "reset --soft HEAD~1"
 ```
 
 ## git difftools
