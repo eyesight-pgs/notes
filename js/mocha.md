@@ -197,4 +197,33 @@ it("should call db function once", async () => {
   expect(...
 });
 ```
+## Mocking the function in same file (TLDR: not possible)
+```js
+// main.js
+function sum(a, b) { // we need to mock sum function. But not possible
+    return a + b;
+}
+function double(n) {
+  const double = sum(n, n);
+  console.log("double :", double);
+  return double;
+}
+module.exports = { sum, double };
+```
+```js
+// test/main.test.js
+const { expect } = require("chai");
+const main = require("../main.js");
+const sinon = require("sinon");
+
+describe("testing double function", () => {
+  it("should not call original sum function", () => {
+    main.sum = sinon.stub(main, "sum").returns(5); // this will not work, since the double function accesses sum function through closure
+    const res = main.double(2);
+    expect(res).to.equal(5);
+  });
+});
+```
+To mock sum function, either we have to move sum function inside some class or move it to other file (module).
+
 
