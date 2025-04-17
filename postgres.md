@@ -296,6 +296,20 @@ FROM pg_sequences
 where last_value is not null;
 ```
 
+## List all sequence names of a table
+```sql
+SELECT
+s.relname AS sequence_name,
+t.relname AS table_name,
+a.attname AS column_name
+from pg_class s
+JOIN pg_depend d ON d.objid = s.oid
+JOIN pg_class t ON d.refobjid = t.oid
+JOIN pg_attribute a ON a.attrelid = t.oid AND a.attnum = d.refobjsubid
+WHERE s.relkind = 'S' -- sequence
+AND t.relname = '__table_name__';
+```
+
 ## view timezone list (with more data)
 
 ```sql
