@@ -702,7 +702,8 @@ WHERE
 GROUP BY t.relname, i.relname
 ORDER BY t.relname, i.relname;
 ```
-
+## Visualize explain query
+https://pev2.pages.dev
 
 
 
