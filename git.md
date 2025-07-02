@@ -337,7 +337,7 @@ git submodule add git@exaple.com
 git submodule deinit -f .
 git submodule update --init
 
-## updating submodules commits to latest
+## updating submodules commits to latest (best way to update submodules)
 git submodule update --remote --merge
 ```
 
