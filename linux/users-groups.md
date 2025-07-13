@@ -26,6 +26,8 @@ http, docker, rfkill
 
 list all groups of an user: `groups my_user`
 
+## usual groups
+network docker postgres rfkill video storage disk audio wheel <my_username>
 
 
 
