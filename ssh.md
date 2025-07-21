@@ -47,13 +47,13 @@ ssh -vvvT git@github.com
 		User git
 		Hostname github.com
 		PreferredAuthentications publickey
-		IdentityFile github-ed25519
+		IdentityFile /home/<username>/.ssh/github-ed25519
 
 	Host github.com
 		User git
 		Hostname github.com
 		PreferredAuthentications publickey
-		IdentityFile github-ed25519-another-account
+		IdentityFile /home/<username>/.sshgithub-ed25519-another-account
 	```
 
 
@@ -88,3 +88,7 @@ Host github.com
   PasswordAuthentication no
   IdentityFile /home/_USER_NAME_/.ssh/github_ed25519
 ```
+
+Try giving absolute path to IdentityFile inside config file.
+
+
