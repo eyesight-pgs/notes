@@ -20,3 +20,7 @@ From Microsoft:
   - ![image](https://github.com/user-attachments/assets/cc291d05-ac42-4ea7-96e9-e9fcd1773cc1)
 
 
+## sdkman
+similar to nvm
+
+
