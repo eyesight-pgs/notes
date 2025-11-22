@@ -26,7 +26,7 @@ Now using node v20.18.0 (npm v10.8.2)
 default -> v20 (-> v20.18.0)
 ```
 
-## list all versions
+## list local versions
 ```bash
 > nvm list
 ->     v18.18.2
@@ -48,4 +48,19 @@ lts/fermium -> v14.21.3 (-> N/A)
 lts/gallium -> v16.20.2 (-> N/A)
 lts/hydrogen -> v18.20.4 (-> N/A)
 lts/iron -> v20.18.0
+```
+
+## nvm list all available versions from remote
+```bash
+~ (master *|u=)
+ ins > nvm list-remote
+        v0.1.14
+        v0.1.15
+        ...
+        ...
+        ...
+       v24.11.0   (LTS: Krypton)
+       v24.11.1   (Latest LTS: Krypton)
+        v25.0.0
+        v25.1.0
 ```
