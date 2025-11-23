@@ -1,5 +1,14 @@
 # ==== GO LANG ====
 
+## install go
+https://go.dev/doc/install
+
+print go related env vars: `go env`
+
+GO_PATH: `https://rakyll.org/default-gopath/`
+
+go hello world: `https://go.dev/doc/code`
+
 
 ## To avoid value not used
 ```go
