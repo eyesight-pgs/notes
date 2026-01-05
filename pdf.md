@@ -1,10 +1,11 @@
 # pdf
 
 ## app
+```txt
 linux - zathura + mupdf, atril (from MATE DE), Libre Office Draw (for editing PDF), Firefox (view + edit)
 android - Librera FD (available on F-Droid)
 windows - Sumatra PDF
-
+```
 
 
 ## lock a pdf
