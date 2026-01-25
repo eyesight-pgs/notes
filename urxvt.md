@@ -1,4 +1,6 @@
-# urxvt-copy-paste
+# urxvt
+
+## urxvt-copy-paste
 
 ```
 ctrl+alt+c	copy
@@ -12,4 +14,5 @@ URxvt.iso14755:         false
 URxvt.iso14755_52:      false
 ```
 
-
+## extensions:
+- keyboard-select
