@@ -1,0 +1,32 @@
+# .inputrc
+
+```.inputrc
+set show-mode-in-prompt on
+
+# # basic
+# set vi-ins-mode-string "\1\e[1;38;5;51m\2 INS \b\n \1\e[0m\2"
+# set vi-cmd-mode-string "\1\e[1;38;5;125m\2 NOR \b\n \1\e[0m\2"
+
+## fancy
+set vi-ins-mode-string "\1\e[1;38;5;51m\2⬡ INS \1\e[0m\e]12;#00ffff\a\e[6 q\2"
+set vi-cmd-mode-string "\1\e[1;38;5;125m\2⬢ NOR \1\e[0m\e]12;#af005f\a\e[2 q\2"
+
+# ## super fancy
+# set vi-ins-mode-string "\1\e[1;38;5;51m\2██ INS ██\1\e[0m\2 "
+# set vi-cmd-mode-string "\1\e[1;38;5;125m\2██ NOR ██\1\e[0m\2 "
+
+# Ctlr+BackSpace - remvoe word
+"\C-h": backward-kill-word
+
+# Type !!, hit Alt + ! (i.e., Alt+Shift+1), and it expands immediately (ins mode)
+"\e!": magic-space
+
+# Case-insensitive tab completion (typing 'v' finds 'VSCode')
+set completion-ignore-case on
+
+# Colorize tab completions based on LS_COLORS (so folders look like folders)
+set colored-stats on
+```
+
+
+
