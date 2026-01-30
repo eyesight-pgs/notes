@@ -28,5 +28,10 @@ set completion-ignore-case on
 set colored-stats on
 ```
 
+Note: add following to .bashrc to toggle between insert mode and normal mode using ;a
+```
+set -o vi
+bind '";a":vi-movement-mode'
+```
 
 
