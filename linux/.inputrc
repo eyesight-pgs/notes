@@ -4,8 +4,8 @@
 set show-mode-in-prompt on
 
 # # basic
-# set vi-ins-mode-string "\1\e[1;38;5;51m\2 INS \b\n \1\e[0m\2"
-# set vi-cmd-mode-string "\1\e[1;38;5;125m\2 NOR \b\n \1\e[0m\2"
+# set vi-ins-mode-string "\1\e[1;38;5;51m\2 INS \1\e[0m\2"
+# set vi-cmd-mode-string "\1\e[1;38;5;125m\2 NOR \1\e[0m\2"
 
 ## fancy
 set vi-ins-mode-string "\1\e[1;38;5;51m\2⬡ INS \1\e[0m\e]12;#00ffff\a\e[6 q\2"
