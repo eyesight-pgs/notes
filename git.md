@@ -136,7 +136,11 @@ git config --global alias.cp "cherry-pick"
 git config --global alias.lg "log"
 # git config --global alias.lgo "log --oneline --decorate --all --graph"
 # git config --global alias.lgo11 "log --oneline --decorate --all --graph -11"
-git config --global alias.lgo 'log --oneline --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"'
+git config --global alias.lgo 'log --oneline --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %s %Creset" --date=format:"%Y-%m-%d"'
+git config --global alias.lgod 'log --oneline --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"'
+git config --global alias.lgoM 'log --oneline --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %s %Creset" --date=format:"%Y-%m-%d" --invert-grep --grep="Merge"'
+git config --global alias.lgodM 'log --oneline --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d" --invert-grep --grep="Merge"'
+git config --global alias.lgomy 'log --oneline --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %s %Creset" --date=format:"%Y-%m-%d" --author="__NAME_HERE__" --invert-grep --grep="Merge"'
 git config --global alias.lgo11 'log --oneline -11 --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"'
 git config --global alias.lgo22 'log --oneline -22 --color=always --format="%C(auto)%h %<(15,trunc)%an %ad %d %s %Creset" --date=format:"%Y-%m-%d"'
 git config --global alias.rb "rebase"
