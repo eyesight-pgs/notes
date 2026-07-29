@@ -287,6 +287,11 @@ select setval(pg_get_serial_sequence('my_table', 'my_column'), (select max(my_co
   (it keeps incrementing).
   link: [sequences-not-affected-by-transactions](https://stackoverflow.com/questions/2095917/sequences-not-affected-by-transactions)
 
+- truncate table does not reset the sequence value. to truncate with next value sequence reset run:
+```sql
+truncate <table> restart identity;
+```
+
 - exporting sequence numbers
 useful during importing schema using DDL queries. since the dbeaver DDL queries do not include sequence no,
 we can use following query to get the sequence no details
@@ -295,6 +300,7 @@ SELECT 'SELECT setval(' || quote_literal(quote_ident(schemaname) || '.' || seque
 FROM pg_sequences
 where last_value is not null;
 ```
+
 
 ## List all sequence names of a table
 ```sql
